@@ -1,831 +1,466 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Rafał Pistrakiewicz Bau & Renovierung</title>
-  <meta name="description" content="Rafał Pistrakiewicz Bau & Renovierung - polskie usługi budowlane w Niemczech. Remonty, budowa domów, malowanie. Połączenie polskiej solidności z niemiecką precyzją.">
-  <meta name="keywords" content="budowa, remonty, Niemcy, polskie firmy budowlane, malowanie, elewacje">
-  <meta name="author" content="Rafał Pistrakiewicz">
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content="Rafał Pistrakiewicz Bau & Renovierung">
-  <meta property="og:description" content="Polskie usługi budowlane w Niemczech - remonty, budowa domów, malowanie.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://twojastrona.com/og-image.jpg">
-  <meta property="og:url" content="https://twojastrona.com">
-  <meta name="twitter:card" content="summary_large_image">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="description" content="Rafał Pistrakiewicz Bau & Renovierung - polskie usługi budowlane w Niemczech. Remonty, budowa domów, malowanie." />
+  <meta name="author" content="Rafał Pistrakiewicz" />
+  <meta property="og:title" content="Rafał Pistrakiewicz Bau & Renovierung" />
+  <meta property="og:description" content="Polskie usługi budowlane w Niemczech - remonty, budowa domów, malowanie." />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body { font-family: 'Poppins', sans-serif; }
-    .lang-btn { cursor: pointer; transition: 0.3s; }
-    .lang-btn:hover { color: #d4af37; }
-    .smooth-scroll { scroll-behavior: smooth; }
-    
-    /* Mobile Navigation */
-    .mobile-bottom-nav {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: #0a1a2f;
-      padding: 0.5rem;
-      z-index: 1000;
-      border-top: 1px solid #1e3a5f;
-    }
-    
-    .nav-icons {
-      display: flex;
-      justify-content: space-around;
-    }
-    
-    .nav-icon {
-      color: white;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 0.7rem;
-      padding: 0.5rem;
-    }
-    
-    .nav-icon i {
-      font-size: 1.2rem;
-      margin-bottom: 0.25rem;
-    }
-    
-    /* Dodaj padding na dole dla mobile nav */
-    @media (max-width: 768px) {
-      body {
-        padding-bottom: 70px;
-      }
-      .mobile-bottom-nav {
-        display: block;
-      }
-    }
-
-    /* Animations */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease-out;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Carousel */
-    .carousel-item {
-      display: none;
-      animation: fadeIn 0.5s ease-in;
-    }
-
-    .carousel-item.active {
-      display: block;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+    :root { --gold: #d4af37; --nav-bg: #0a1a2f; --nav-text: #d4af37; }
+    .gold-text { color: var(--gold); }
+    .gold-bg { background-color: var(--gold); color: #0a1a2f; }
+    .reg-btn { background: linear-gradient(90deg,#d4af37,#b8941f); color:#fff; }
+    /* mobile bottom nav */
+    .mobile-bottom-nav { display:none; position:fixed; bottom:0; left:0; right:0; background:var(--nav-bg); padding:.5rem; z-index:1000; border-top:1px solid #1e3a5f; }
+    @media (max-width:768px){ body{padding-bottom:70px;} .mobile-bottom-nav{display:block;} }
+    .hidden-el { display:none; }
+    /* blog styles small tweak */
+    .blog-card { background:#0f1724; border:1px solid rgba(212,175,55,0.15); color:#e6e6e6; }
+    .gold-head { color:var(--gold); }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900 smooth-scroll">
+<body class="bg-gray-50 text-gray-900">
 
-  <!-- Loading Spinner -->
+  <!-- Loading -->
   <div id="loading" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
-    <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[#d4af37]"></div>
+    <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2" style="border-color:var(--gold)"></div>
   </div>
 
-  <!-- 🔹 Header -->
-  <header class="bg-[#0a1a2f] text-white py-4 shadow-lg sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center px-6">
-      <h1 class="text-xl md:text-2xl font-bold text-[#d4af37]">Rafał Pistrakiewicz Bau & Renovierung</h1>
-      
-      <!-- Menu desktop -->
-      <nav class="hidden md:flex space-x-8">
-        <a href="#o-nas" class="hover:text-[#d4af37] transition-colors" data-pl="O nas" data-de="Über uns">O nas</a>
-        <a href="#uslugi" class="hover:text-[#d4af37] transition-colors" data-pl="Usługi" data-de="Dienstleistungen">Usługi</a>
-        <a href="#realizacje" class="hover:text-[#d4af37] transition-colors" data-pl="Realizacje" data-de="Projekte">Realizacje</a>
-        <a href="#opinie" class="hover:text-[#d4af37] transition-colors" data-pl="Opinie" data-de="Bewertungen">Opinie</a>
-        <a href="#partnerzy" class="hover:text-[#d4af37] transition-colors" data-pl="Partnerzy" data-de="Partner">Partnerzy</a>
-        <a href="#kontakt" class="hover:text-[#d4af37] transition-colors" data-pl="Kontakt" data-de="Kontakt">Kontakt</a>
+  <!-- Header -->
+  <header class="bg-[var(--nav-bg)] text-white py-4 sticky top-0 z-50 shadow">
+    <div class="container mx-auto px-6 flex items-center justify-between">
+      <h1 class="text-xl md:text-2xl font-bold gold-text">Rafał Pistrakiewicz Bau & Renovierung</h1>
+
+      <nav class="hidden md:flex gap-8 items-center text-white">
+        <a href="#o-nas" class="hover:text-[var(--gold)]" data-pl="O nas" data-de="Über uns">O nas</a>
+        <a href="#uslugi" class="hover:text-[var(--gold)]" data-pl="Usługi" data-de="Dienstleistungen">Usługi</a>
+        <a href="#realizacje" class="hover:text-[var(--gold)]" data-pl="Realizacje" data-de="Projekte">Realizacje</a>
+        <a href="#opinie" class="hover:text-[var(--gold)]" data-pl="Opinie" data-de="Bewertungen">Opinie</a>
+        <a href="#partnerzy" class="hover:text-[var(--gold)]" data-pl="Partnerzy" data-de="Partner">Partnerzy</a>
+        <a href="#kontakt" class="hover:text-[var(--gold)]" data-pl="Kontakt" data-de="Kontakt">Kontakt</a>
       </nav>
-      
+
       <div class="flex items-center gap-4">
-        <div class="text-sm hidden md:block">
-          📞 +49 123 456 7890
+        <div class="text-sm hidden md:block text-gray-200">📞 +49 123 456 7890</div>
+        <div class="flex items-center gap-2">
+          <button class="lang-btn" data-lang="pl" aria-label="PL">🇵🇱</button>
+          <button class="lang-btn" data-lang="de" aria-label="DE">🇩🇪</button>
         </div>
-        <div class="flex gap-2 text-lg">
-          <span class="lang-btn" onclick="setLang('pl')">🇵🇱</span>
-          <span class="lang-btn" onclick="setLang('de')">🇩🇪</span>
-        </div>
-        
-        <!-- Przycisk menu mobilnego -->
-        <div class="md:hidden">
-          <button id="mobileMenuButton" class="text-white">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
+        <button id="mobileMenuButton" class="md:hidden text-white ml-2">
+          <i class="fa fa-bars"></i>
+        </button>
       </div>
     </div>
-    
-    <!-- Menu mobilne -->
-    <div id="mobileMenu" class="absolute top-16 left-0 w-full bg-[#0a1a2f] hidden md:hidden">
-      <div class="flex flex-col space-y-4 p-6">
-        <a href="#o-nas" class="text-white hover:text-[#d4af37] transition-colors" data-pl="O nas" data-de="Über uns">O nas</a>
-        <a href="#uslugi" class="text-white hover:text-[#d4af37] transition-colors" data-pl="Usługi" data-de="Dienstleistungen">Usługi</a>
-        <a href="#realizacje" class="text-white hover:text-[#d4af37] transition-colors" data-pl="Realizacje" data-de="Projekte">Realizacje</a>
-        <a href="#opinie" class="text-white hover:text-[#d4af37] transition-colors" data-pl="Opinie" data-de="Bewertungen">Opinie</a>
-        <a href="#partnerzy" class="text-white hover:text-[#d4af37] transition-colors" data-pl="Partnerzy" data-de="Partner">Partnerzy</a>
-        <a href="#kontakt" class="text-white hover:text-[#d4af37] transition-colors" data-pl="Kontakt" data-de="Kontakt">Kontakt</a>
-        <div class="pt-4 border-t border-gray-700">
-          <p class="text-white">📞 +49 123 456 7890</p>
-          <p class="text-white">✉️ kontakt@pistrakiewiczbau.de</p>
+
+    <!-- mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-[var(--nav-bg)]">
+      <div class="p-6 flex flex-col gap-4">
+        <a href="#o-nas" class="text-white" data-pl="O nas" data-de="Über uns">O nas</a>
+        <a href="#uslugi" class="text-white" data-pl="Usługi" data-de="Dienstleistungen">Usługi</a>
+        <a href="#realizacje" class="text-white" data-pl="Realizacje" data-de="Projekte">Realizacje</a>
+        <a href="#opinie" class="text-white" data-pl="Opinie" data-de="Bewertungen">Opinie</a>
+        <a href="#partnerzy" class="text-white" data-pl="Partnerzy" data-de="Partner">Partnerzy</a>
+        <a href="#kontakt" class="text-white" data-pl="Kontakt" data-de="Kontakt">Kontakt</a>
+        <div class="pt-4 border-t border-gray-700 text-gray-200">
+          <p>📞 +49 123 456 7890</p>
+          <!-- private email removed as requested -->
         </div>
       </div>
     </div>
   </header>
 
-  <!-- 🔹 Hero -->
-  <section class="bg-gradient-to-r from-[#0a1a2f] to-[#1e3a5f] text-white py-20 md:py-24 text-center">
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-[#0a1a2f] to-[#1e3a5f] text-white py-20">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold gold-text" data-pl="Polska fachowość, niemiecka precyzja" data-de="Polnische Facharbeit, deutsche Präzision">Polska fachowość, niemiecka precyzja</h2>
+      <p class="max-w-2xl mx-auto mt-4 text-gray-200" data-pl="Zaufaj doświadczeniu i rzetelności. Nasze realizacje mówią same za siebie." data-de="Vertrauen Sie auf Erfahrung und Zuverlässigkeit. Unsere Arbeiten sprechen für sich.">Zaufaj doświadczeniu i rzetelności. Nasze realizacje mówią same za siebie.</p>
+      <div class="mt-8 flex justify-center gap-4">
+        <a href="#kontakt" class="px-6 py-3 rounded-lg gold-bg font-semibold" data-pl="Zapytaj o wycenę" data-de="Kostenangebot anfordern">Zapytaj o wycenę</a>
+        <a href="#realizacje" class="px-6 py-3 rounded-lg border border-white text-white hover:bg-white hover:text-[var(--nav-bg)] transition" data-pl="Zobacz realizacje" data-de="Projekte ansehen">Zobacz realizacje</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- O nas -->
+  <section id="o-nas" class="container mx-auto px-6 py-12">
+    <h3 class="text-2xl md:text-3xl font-semibold text-center gold-text" data-pl="O nas" data-de="Über uns">O nas</h3>
+    <div class="max-w-3xl mx-auto text-center mt-6">
+      <p data-pl="Zaczynaliśmy od jednego narzędzia i marzenia, żeby robić rzeczy lepiej." data-de="Wir haben mit einem Werkzeug und dem Traum begonnen, Dinge besser zu machen.">Zaczynaliśmy od jednego narzędzia i marzenia, żeby robić rzeczy lepiej.</p>
+      <p class="mt-3" data-pl="Dziś pracujemy w Niemczech, z tą samą precyzją, cierpliwością i dumą, która towarzyszyła nam od początku." data-de="Heute arbeiten wir in Deutschland mit derselben Präzision, Geduld und dem Stolz von damals.">Dziś pracujemy w Niemczech, z tą samą precyzją, cierpliwością i dumą, która towarzyszyła nam od początku.</p>
+      <p class="mt-3 font-semibold" data-pl="Nie jesteśmy najwięksi. Ale jesteśmy Ci potrzebni, gdy liczy się dokładność." data-de="Wir sind nicht die größten. Aber wir sind die Richtigen, wenn Präzision zählt.">Nie jesteśmy najwięksi. Ale jesteśmy Ci potrzebni, gdy liczy się dokładność.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <div class="w-14 h-14 rounded-full bg-[var(--gold)] text-white flex items-center justify-center mx-auto font-bold">10+</div>
+        <h4 class="text-lg font-semibold mt-4 text-[var(--nav-bg)]" data-pl="Lat doświadczenia" data-de="Jahre Erfahrung">Lat doświadczenia</h4>
+        <p class="text-gray-600">W branży budowlanej</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <div class="w-14 h-14 rounded-full bg-[var(--gold)] text-white flex items-center justify-center mx-auto font-bold">200+</div>
+        <h4 class="text-lg font-semibold mt-4 text-[var(--nav-bg)]" data-pl="Zrealizowanych projektów" data-de="Abgeschlossene Projekte">Zrealizowanych projektów</h4>
+        <p class="text-gray-600">Zadowolonych klientów</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <div class="w-14 h-14 rounded-full bg-[var(--gold)] text-white flex items-center justify-center mx-auto font-bold">100%</div>
+        <h4 class="text-lg font-semibold mt-4 text-[var(--nav-bg)]" data-pl="Gwarancja jakości" data-de="Qualitätsgarantie">Gwarancja jakości</h4>
+        <p class="text-gray-600">Terminowo i solidnie</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Usługi -->
+  <section id="uslugi" class="bg-[#f9fafb] py-12">
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4" data-pl="Polska fachowość, niemiecka precyzja" data-de="Polnische Facharbeit, deutsche Präzision">Polska fachowość, niemiecka precyzja</h2>
-      <p class="text-base md:text-lg text-gray-200 max-w-2xl mx-auto mb-8" data-pl="Zaufaj doświadczeniu i rzetelności. Nasze realizacje mówią same za siebie." data-de="Vertrauen Sie auf Erfahrung und Zuverlässigkeit. Unsere Arbeiten sprechen für sich.">
-        Zaufaj doświadczeniu i rzetelności. Nasze realizacje mówią same za siebie.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#kontakt" class="bg-[#d4af37] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b8941f] transition-colors inline-block text-center" 
-           data-pl="Zapytaj o wycenę" data-de="Kostenangebot anfordern">Zapytaj o wycenę</a>
-        <a href="#realizacje" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#0a1a2f] transition-colors inline-block text-center" 
-           data-pl="Zobacz realizacje" data-de="Projekte ansehen">Zobacz realizacje</a>
+      <h3 class="text-2xl text-center gold-text" data-pl="Nasze usługi" data-de="Unsere Dienstleistungen">Nasze usługi</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+        <div class="bg-white rounded-2xl p-6 shadow text-center">
+          <div class="w-12 h-12 rounded-full bg-[var(--nav-bg)] text-[var(--gold)] mx-auto flex items-center justify-center">🏠</div>
+          <h4 class="mt-4 font-semibold text-[var(--gold)]" data-pl="Remonty wnętrz" data-de="Innenrenovierungen">Remonty wnętrz</h4>
+          <p class="text-gray-600 mt-2" data-pl="Kompleksowe wykończenia mieszkań i domów." data-de="Komplette Renovierungen von Wohnungen und Häusern.">Kompleksowe wykończenia mieszkań i domów.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow text-center">
+          <div class="w-12 h-12 rounded-full bg-[var(--nav-bg)] text-[var(--gold)] mx-auto flex items-center justify-center">🏗️</div>
+          <h4 class="mt-4 font-semibold text-[var(--gold)]" data-pl="Budowa domów" data-de="Hausbau">Budowa domów</h4>
+          <p class="text-gray-600 mt-2" data-pl="Od fundamentów po dach – budujemy solidnie i terminowo." data-de="Vom Fundament bis zum Dach – solide und termingerecht.">Od fundamentów po dach – budujemy solidnie i terminowo.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow text-center">
+          <div class="w-12 h-12 rounded-full bg-[var(--nav-bg)] text-[var(--gold)] mx-auto flex items-center justify-center">🎨</div>
+          <h4 class="mt-4 font-semibold text-[var(--gold)]" data-pl="Malowanie i elewacje" data-de="Malerarbeiten und Fassaden">Malowanie i elewacje</h4>
+          <p class="text-gray-600 mt-2" data-pl="Nowoczesne technologie i estetyka, która trwa latami." data-de="Moderne Technologien und Ästhetik, die jahrelang hält.">Nowoczesne technologie i estetyka, która trwa latami.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 🔹 O nas -->
-  <section id="o-nas" class="py-12 md:py-16 container mx-auto px-6">
-    <h3 class="text-2xl md:text-3xl font-semibold text-center mb-8 text-[#0a1a2f]" data-pl="O nas" data-de="Über uns">O nas</h3>
-    
-    <!-- TWÓJ TEKST DODANY TUTAJ -->
-    <div class="text-center text-base md:text-lg max-w-3xl mx-auto mb-8 md:mb-12">
-        <p>Zaczynaliśmy od jednego narzędzia i marzenia, żeby robić rzeczy lepiej.</p>
-        <p>Dziś pracujemy w Niemczech, z tą samą precyzją, cierpliwością i dumą, która towarzyszyła nam od początku.</p>
-        <p class="font-semibold text-[#0a1a2f]">Nie jesteśmy najwięksi. Ale jesteśmy Ci potrzebni, gdy liczy się dokładność.</p>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12">
-      <div class="text-center bg-white p-6 rounded-2xl shadow-lg">
-        <div class="bg-[#d4af37] text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">10+</div>
-        <h4 class="text-lg md:text-xl font-semibold mb-2" data-pl="Lat doświadczenia" data-de="Jahre Erfahrung">Lat doświadczenia</h4>
-        <p class="text-gray-600 text-sm md:text-base" data-pl="W branży budowlanej" data-de="In der Baubranche">W branży budowlanej</p>
-      </div>
-      <div class="text-center bg-white p-6 rounded-2xl shadow-lg">
-        <div class="bg-[#d4af37] text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">200+</div>
-        <h4 class="text-lg md:text-xl font-semibold mb-2" data-pl="Zrealizowanych projektów" data-de="Abgeschlossene Projekte">Zrealizowanych projektów</h4>
-        <p class="text-gray-600 text-sm md:text-base" data-pl="Zadowolonych klientów" data-de="Zufriedene Kunden">Zadowolonych klientów</p>
-      </div>
-      <div class="text-center bg-white p-6 rounded-2xl shadow-lg">
-        <div class="bg-[#d4af37] text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">100%</div>
-        <h4 class="text-lg md:text-xl font-semibold mb-2" data-pl="Gwarancja jakości" data-de="Qualitätsgarantie">Gwarancja jakości</h4>
-        <p class="text-gray-600 text-sm md:text-base" data-pl="Terminowo i solidnie" data-de="Termingerecht und solide">Terminowo i solidnie</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 🔹 Usługi -->
-  <section id="uslugi" class="bg-[#f9fafb] py-12 md:py-16">
+  <!-- Realizacje -->
+  <section id="realizacje" class="py-12 bg-white">
     <div class="container mx-auto px-6">
-      <h3 class="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12 text-[#0a1a2f]" data-pl="Nasze usługi" data-de="Unsere Dienstleistungen">Nasze usługi</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-        <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-          <div class="bg-[#0a1a2f] text-[#d4af37] w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">🏠</div>
-          <h4 class="text-lg md:text-xl font-semibold mb-2 text-[#d4af37]" data-pl="Remonty wnętrz" data-de="Innenrenovierungen">Remonty wnętrz</h4>
-          <p class="text-gray-600 text-sm md:text-base" data-pl="Kompleksowe wykończenia mieszkań i domów." data-de="Komplette Renovierungen von Wohnungen und Häusern.">Kompleksowe wykończenia mieszkań i domów.</p>
+      <h3 class="text-2xl text-center gold-text" data-pl="Nasze realizacje" data-de="Unsere Projekte">Nasze realizacje</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        <div class="group relative overflow-hidden rounded-2xl shadow cursor-pointer" onclick="openModal('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00')">
+          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=60" class="w-full h-56 object-cover" alt="">
+          <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition">
+            <span class="text-white font-semibold" data-pl="Remont mieszkania" data-de="Wohnungsrenovierung">Remont mieszkania</span>
+          </div>
         </div>
-        <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-          <div class="bg-[#0a1a2f] text-[#d4af37] w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">🏗️</div>
-          <h4 class="text-lg md:text-xl font-semibold mb-2 text-[#d4af37]" data-pl="Budowa domów" data-de="Hausbau">Budowa domów</h4>
-          <p class="text-gray-600 text-sm md:text-base" data-pl="Od fundamentów po dach – budujemy solidnie i terminowo." data-de="Vom Fundament bis zum Dach – solide und termingerecht.">Od fundamentów po dach – budujemy solidnie i terminowo.</p>
+        <div class="group relative overflow-hidden rounded-2xl shadow cursor-pointer" onclick="openModal('https://images.unsplash.com/photo-1513584684374-8bab748fbf90')">
+          <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&w=800&q=60" class="w-full h-56 object-cover" alt="">
+          <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition">
+            <span class="text-white font-semibold" data-pl="Nowy dom" data-de="Neues Haus">Nowy dom</span>
+          </div>
         </div>
-        <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
-          <div class="bg-[#0a1a2f] text-[#d4af37] w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">🎨</div>
-          <h4 class="text-lg md:text-xl font-semibold mb-2 text-[#d4af37]" data-pl="Malowanie i elewacje" data-de="Malerarbeiten und Fassaden">Malowanie i elewacje</h4>
-          <p class="text-gray-600 text-sm md:text-base" data-pl="Nowoczesne technologie i estetyka, która trwa latami." data-de="Moderne Technologien und Ästhetik, die jahrelang hält.">Nowoczesne technologie i estetyka, która trwa latami.</p>
+        <div class="group relative overflow-hidden rounded-2xl shadow cursor-pointer" onclick="openModal('https://images.unsplash.com/photo-1493809842364-78817add7ffb')">
+          <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=60" class="w-full h-56 object-cover" alt="">
+          <div class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition">
+            <span class="text-white font-semibold" data-pl="Elewacja" data-de="Fassade">Elewacja</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 🔹 Galeria realizacji -->
-  <section id="realizacje" class="py-12 md:py-16 bg-white">
+  <!-- Opinie (carousel simple) -->
+  <section id="opinie" class="py-12 bg-[#f9fafb]">
     <div class="container mx-auto px-6">
-      <h3 class="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12 text-[#0a1a2f]" 
-          data-pl="Nasze realizacje" data-de="Unsere Projekte">Nasze realizacje</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-        <div class="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer" onclick="openModal('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')">
-          <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-               alt="Realizacja 1" class="w-full h-48 md:h-64 object-cover transition-transform group-hover:scale-105" loading="lazy">
-          <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="text-white font-semibold text-base md:text-lg" data-pl="Remont mieszkania" data-de="Wohnungsrenovierung">Remont mieszkania</span>
-          </div>
+      <h3 class="text-2xl text-center gold-text" data-pl="Opinie naszych klientów" data-de="Kundenbewertungen">Opinie naszych klientów</h3>
+      <div class="mt-8">
+        <div id="reviews" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- reviews injected by JS -->
         </div>
-        <div class="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer" onclick="openModal('https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')">
-          <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-               alt="Realizacja 2" class="w-full h-48 md:h-64 object-cover transition-transform group-hover:scale-105" loading="lazy">
-          <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="text-white font-semibold text-base md:text-lg" data-pl="Nowy dom" data-de="Neues Haus">Nowy dom</span>
-          </div>
-        </div>
-        <div class="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer" onclick="openModal('https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')">
-          <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-               alt="Realizacja 3" class="w-full h-48 md:h-64 object-cover transition-transform group-hover:scale-105" loading="lazy">
-          <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="text-white font-semibold text-base md:text-lg" data-pl="Elewacja" data-de="Fassade">Elewacja</span>
-          </div>
+        <div class="flex justify-center gap-2 mt-6">
+          <button id="revPrev" class="px-3 py-1 rounded bg-white border">◀</button>
+          <button id="revNext" class="px-3 py-1 rounded bg-white border">▶</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 🔹 Nowa sekcja: Opinie klientów -->
-  <section id="opinie" class="py-12 md:py-16 bg-[#f9fafb]">
+  <!-- Sekcja reklam / ogłoszeń dla firm -->
+  <section id="reklamy" class="py-12">
     <div class="container mx-auto px-6">
-      <h3 class="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12 text-[#0a1a2f]" 
-          data-pl="Opinie naszych klientów" data-de="Kundenbewertungen">Opinie naszych klientów</h3>
-      <div class="relative">
-        <div class="carousel-container">
-          <div class="carousel-item active">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              <div class="bg-white rounded-2xl shadow-lg p-6">
-                <div class="flex items-center mb-4">
-                  <div class="text-yellow-400 text-xl">★★★★★</div>
-                </div>
-                <p class="text-gray-600 mb-4" data-pl="Profesjonalna obsługa i terminowe wykonanie. Polecam!" data-de="Professioneller Service und termingerechte Ausführung. Sehr zu empfehlen!">Profesjonalna obsługa i terminowe wykonanie. Polecam!</p>
-                <div class="flex items-center">
-                  <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-                  <div>
-                    <p class="font-semibold">Anna Nowak</p>
-                    <p class="text-sm text-gray-500" data-pl="Remont mieszkania, Berlin" data-de="Wohnungsrenovierung, Berlin">Remont mieszkania, Berlin</p>
-                  </div>
-                </div>
-              </div>
-              <div class="bg-white rounded-2xl shadow-lg p-6">
-                <div class="flex items-center mb-4">
-                  <div class="text-yellow-400 text-xl">★★★★★</div>
-                </div>
-                <p class="text-gray-600 mb-4" data-pl="Solidna firma, dokładnie tak jak obiecali. Jakość na najwyższym poziomie." data-de="Solides Unternehmen, genau wie versprochen. Qualität auf höchstem Niveau.">Solidna firma, dokładnie tak jak obiecali. Jakość na najwyższym poziomie.</p>
-                <div class="flex items-center">
-                  <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-                  <div>
-                    <p class="font-semibold">Thomas Schmidt</p>
-                    <p class="text-sm text-gray-500" data-pl="Budowa domu, Hamburg" data-de="Hausbau, Hamburg">Budowa domu, Hamburg</p>
-                  </div>
-                </div>
-              </div>
-              <div class="bg-white rounded-2xl shadow-lg p-6">
-                <div class="flex items-center mb-4">
-                  <div class="text-yellow-400 text-xl">★★★★★</div>
-                </div>
-                <p class="text-gray-600 mb-4" data-pl="Bardzo polecam! Rzetelni fachowcy w przystępnej cenie." data-de="Sehr empfehlenswert! Zuverlässige Fachleute zu einem fairen Preis.">Bardzo polecam! Rzetelni fachowcy w przystępnej cenie.</p>
-                <div class="flex items-center">
-                  <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-                  <div>
-                    <p class="font-semibold">Robert Weber</p>
-                    <p class="text-sm text-gray-500" data-pl="Malowanie, Monachium" data-de="Malerarbeiten, München">Malowanie, Monachium</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+      <h3 class="text-2xl text-center gold-text" data-pl="Reklama i partnerzy" data-de="Werbung & Partner">Reklama i partnerzy</h3>
+      <p class="text-center text-gray-600 mt-3" data-pl="Chcesz reklamować swoją firmę budowlaną lub zostać naszym partnerem? Wypełnij formularz." data-de="Möchten Sie Ihr Bauunternehmen bewerben oder Partner werden? Formular ausfüllen.">Chcesz reklamować swoją firmę budowlaną lub zostać naszym partnerem? Wypełnij formularz.</p>
+
+      <div class="max-w-3xl mx-auto mt-6 bg-white p-6 rounded-2xl shadow">
+        <form id="adForm" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Nazwa firmy</label>
+            <input type="text" id="adCompany" class="w-full mt-1 p-2 border rounded" required>
           </div>
-          <div class="carousel-item">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              <div class="bg-white rounded-2xl shadow-lg p-6">
-                <div class="flex items-center mb-4">
-                  <div class="text-yellow-400 text-xl">★★★★★</div>
-                </div>
-                <p class="text-gray-600 mb-4" data-pl="Perfekcyjna współpraca od początku do końca. Terminy dotrzymane w 100%." data-de="Perfekte Zusammenarbeit von Anfang bis Ende. Termine zu 100% eingehalten.">Perfekcyjna współpraca od początku do końca. Terminy dotrzymane w 100%.</p>
-                <div class="flex items-center">
-                  <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-                  <div>
-                    <p class="font-semibold">Michael Braun</p>
-                    <p class="text-sm text-gray-500" data-pl="Elewacja, Frankfurt" data-de="Fassade, Frankfurt">Elewacja, Frankfurt</p>
-                  </div>
-                </div>
-              </div>
-              <div class="bg-white rounded-2xl shadow-lg p-6">
-                <div class="flex items-center mb-4">
-                  <div class="text-yellow-400 text-xl">★★★★★</div>
-                </div>
-                <p class="text-gray-600 mb-4" data-pl="Jakość wykonania przewyższyła moje oczekiwania. Na pewno jeszcze skorzystam." data-de="Die Ausführungsqualität übertraf meine Erwartungen. Ich werde sicher wieder davon Gebrauch machen.">Jakość wykonania przewyższyła moje oczekiwania. Na pewno jeszcze skorzystam.</p>
-                <div class="flex items-center">
-                  <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-                  <div>
-                    <p class="font-semibold">Katarzyna Woźniak</p>
-                    <p class="text-sm text-gray-500" data-pl="Remont łazienki, Kolonia" data-de="Badezimmerrenovierung, Köln">Remont łazienki, Kolonia</p>
-                  </div>
-                </div>
-              </div>
-              <div class="bg-white rounded-2xl shadow-lg p-6">
-                <div class="flex items-center mb-4">
-                  <div class="text-yellow-400 text-xl">★★★★★</div>
-                </div>
-                <p class="text-gray-600 mb-4" data-pl="Komunikacja na najwyższym poziomie. Wszystko dokładnie wyjaśnione." data-de="Kommunikation auf höchstem Niveau. Alles genau erklärt.">Komunikacja na najwyższym poziomie. Wszystko dokładnie wyjaśnione.</p>
-                <div class="flex items-center">
-                  <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
-                  <div>
-                    <p class="font-semibold">Hans Müller</p>
-                    <p class="text-sm text-gray-500" data-pl="Modernizacja kuchni, Düsseldorf" data-de="Küchenmodernisierung, Düsseldorf">Modernizacja kuchni, Düsseldorf</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Krótki opis / oferta</label>
+            <textarea id="adText" class="w-full mt-1 p-2 border rounded" rows="3" required></textarea>
           </div>
-        </div>
-        <div class="flex justify-center mt-6 space-x-2">
-          <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 active" data-index="0"></button>
-          <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300" data-index="1"></button>
-        </div>
+          <div class="flex gap-3">
+            <input type="url" id="adWebsite" placeholder="https://..." class="flex-1 p-2 border rounded">
+            <input type="tel" id="adPhone" placeholder="+49..." class="w-40 p-2 border rounded">
+          </div>
+          <div class="flex justify-end">
+            <button type="submit" class="px-6 py-2 rounded reg-btn">Wyślij zgłoszenie</button>
+          </div>
+          <p id="adMsg" class="text-sm text-green-600 hidden">Zgłoszenie wysłane (symulacja)</p>
+        </form>
       </div>
     </div>
   </section>
 
-  <!-- 🔹 Partnerzy -->
-  <section id="partnerzy" class="py-12 md:py-16 container mx-auto px-6">
-    <h3 class="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12 text-[#0a1a2f]" data-pl="Partnerzy i współpraca" data-de="Partner und Zusammenarbeit">Partnerzy i współpraca</h3>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center">
-      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
-        <img src="https://via.placeholder.com/150x80?text=Partner+1" class="mx-auto mb-4" alt="Partner 1" loading="lazy">
-        <p class="font-semibold">Pol-Bau GmbH</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
-        <img src="https://via.placeholder.com/150x80?text=Partner+2" class="mx-auto mb-4" alt="Partner 2" loading="lazy">
-        <p class="font-semibold">HausRenovieren24</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
-        <img src="https://via.placeholder.com/150x80?text=Partner+3" class="mx-auto mb-4" alt="Partner 3" loading="lazy">
-        <p class="font-semibold">ElektroKraft</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 🔹 Znajdź nas -->
-  <section id="znajdz-nas" class="py-12 md:py-16 bg-[#f9fafb]">
+  <!-- Partnerzy -->
+  <section id="partnerzy" class="py-12 bg-white">
     <div class="container mx-auto px-6">
-      <h3 class="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12 text-[#0a1a2f]" 
-          data-pl="Znajdź nas tutaj" data-de="Finden Sie uns hier">Znajdź nas tutaj</h3>
-      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-        <div class="bg-white rounded-2xl p-6 shadow-lg">
-          <h4 class="text-xl font-semibold mb-4 text-[#d4af37]" data-pl="Lokalizacja" data-de="Standort">Lokalizacja</h4>
-          <p class="text-gray-600 mb-4" data-pl="Działamy na terenie całych Niemiec, ze szczególnym uwzględnieniem następujących regionów:" data-de="Wir arbeiten in ganz Deutschland mit Schwerpunkt auf folgenden Regionen:">
-            Działamy na terenie całych Niemiec, ze szczególnym uwzględnieniem następujących regionów:
-          </p>
-          <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
-            <li data-pl="Berlin i Brandenburgia" data-de="Berlin und Brandenburg">Berlin i Brandenburgia</li>
-            <li data-pl="Bawaria" data-de="Bayern">Bawaria</li>
-            <li data-pl="Nadrenia Północna-Westfalia" data-de="Nordrhein-Westfalen">Nadrenia Północna-Westfalia</li>
-            <li data-pl="Dolna Saksonia" data-de="Niedersachsen">Dolna Saksonia</li>
-            <li data-pl="Hesja" data-de="Hessen">Hesja</li>
-          </ul>
-          <div class="space-y-3">
-            <p class="flex items-center text-gray-700">
-              <i class="fas fa-phone-alt text-[#d4af37] mr-3"></i>
-              <span>+49 123 456 7890</span>
-            </p>
-            <p class="flex items-center text-gray-700">
-              <i class="fas fa-envelope text-[#d4af37] mr-3"></i>
-              <span>pistrakiewicz@gmail.com</span>
-            </p>
-            <p class="flex items-center text-gray-700">
-              <i class="fas fa-clock text-[#d4af37] mr-3"></i>
-              <span data-pl="Pon-Pt: 7:00-18:00, Sob: 8:00-14:00" data-de="Mo-Fr: 7:00-18:00, Sa: 8:00-14:00">Pon-Pt: 7:00-18:00, Sob: 8:00-14:00</span>
-            </p>
-          </div>
+      <h3 class="text-2xl text-center gold-text" data-pl="Partnerzy i współpraca" data-de="Partner und Zusammenarbeit">Partnerzy i współpraca</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+        <div class="bg-white p-6 rounded-2xl shadow text-center">
+          <img src="https://via.placeholder.com/150x80?text=Pol-Bau" class="mx-auto mb-4" alt="Pol-Bau">
+          <p class="font-semibold">Pol-Bau GmbH</p>
         </div>
-        <div class="bg-white rounded-2xl p-6 shadow-lg">
-          <div class="h-96 bg-gray-200 rounded-lg flex items-center justify-center">
-            <div class="text-center text-gray-500">
-              <i class="fas fa-map-marker-alt text-4xl mb-4"></i>
-              <p data-pl="Mapa lokalizacji" data-de="Standortkarte">Mapa lokalizacji</p>
-              <p class="text-sm mt-2" data-pl="Interaktywna mapa Google" data-de="Interaktive Google-Karte">Interaktywna mapa Google</p>
-            </div>
-          </div>
+        <div class="bg-white p-6 rounded-2xl shadow text-center">
+          <img src="https://via.placeholder.com/150x80?text=HausRenovieren" class="mx-auto mb-4" alt="">
+          <p class="font-semibold">HausRenovieren24</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow text-center">
+          <img src="https://via.placeholder.com/150x80?text=ElektroKraft" class="mx-auto mb-4" alt="">
+          <p class="font-semibold">ElektroKraft</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 🔹 Kontakt -->
-  <section id="kontakt" class="bg-[#0a1a2f] text-white py-12 md:py-16">
+  <!-- Blog (prosty, posty widoczne 2 dni) -->
+  <section id="blog" class="py-12 bg-[#0f1724] text-white">
     <div class="container mx-auto px-6">
-      <h3 class="text-2xl md:text-3xl font-semibold mb-6 md:mb-8 text-[#d4af37] text-center" data-pl="Skontaktuj się z nami" data-de="Kontaktieren Sie uns">Skontaktuj się z nami</h3>
-      
-      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-        <div>
-          <p class="mb-4 md:mb-6 text-base md:text-lg" data-pl="Zadzwoń lub napisz, aby omówić swój projekt." data-de="Rufen Sie an oder schreiben Sie uns, um Ihr Projekt zu besprechen.">Zadzwoń lub napisz, aby omówić swój projekt.</p>
-          <div class="space-y-3 md:space-y-4">
-            <p class="text-base md:text-lg flex items-center">
-              <span class="mr-3">📞</span> +49 123 456 7890
-            </p>
-            <p class="text-base md:text-lg flex items-center">
-              <span class="mr-3">✉️</span> pistrakiewicz@gmail.com
-            </p>
-            <p class="text-base md:text-lg flex items-center">
-              <span class="mr-3">📍</span> <span data-pl="Działamy na terenie całych Niemiec" data-de="Wir arbeiten in ganz Deutschland">Działamy na terenie całych Niemiec</span>
-            </p>
-          </div>
-        </div>
-        
-        <!-- Formularz kontaktowy -->
-        <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg">
-          <form id="contactForm" class="space-y-4 md:space-y-6">
-            <div>
-              <label for="name" class="block text-gray-700 mb-2" data-pl="Imię i nazwisko" data-de="Name">Imię i nazwisko</label>
-              <input type="text" id="name" name="name" required 
-                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#d4af37] focus:border-transparent">
+      <h3 class="text-2xl text-center gold-text">Blog</h3>
+      <p class="text-center text-gray-300 mt-2">Dodaj wpisy, widoczne przez 2 dni.</p>
+
+      <div class="max-w-3xl mx-auto mt-6">
+        <div id="blogFormWrap" class="bg-gray-900 p-6 rounded-2xl blog-card">
+          <form id="blogAddForm" class="space-y-3">
+            <input id="bTitle" placeholder="Tytuł" class="w-full p-2 rounded bg-gray-800 border" required>
+            <input id="bExcerpt" placeholder="Krótki opis" class="w-full p-2 rounded bg-gray-800 border" required>
+            <textarea id="bContent" placeholder="Pełna treść" rows="4" class="w-full p-2 rounded bg-gray-800 border" required></textarea>
+            <div class="flex justify-between items-center">
+              <div class="text-sm text-gray-300">Kategoria:
+                <select id="bCat" class="ml-2 bg-gray-800 p-1 rounded">
+                  <option>Moda</option><option>Ludzie</option><option>Marzenia</option>
+                </select>
+              </div>
+              <button class="px-4 py-2 rounded reg-btn" type="submit">Opublikuj (2 dni)</button>
             </div>
-            <div>
-              <label for="email" class="block text-gray-700 mb-2">E-mail</label>
-              <input type="email" id="email" name="email" required 
-                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#d4af37] focus:border-transparent">
-            </div>
-            <div>
-              <label for="phone" class="block text-gray-700 mb-2" data-pl="Telefon" data-de="Telefon">Telefon</label>
-              <input type="tel" id="phone" name="phone" 
-                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#d4af37] focus:border-transparent">
-            </div>
-            <div>
-              <label for="service" class="block text-gray-700 mb-2" data-pl="Rodzaj usługi" data-de="Dienstleistungsart">Rodzaj usługi</label>
-              <select id="service" name="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#d4af37] focus:border-transparent">
-                <option value="" data-pl="Wybierz usługę" data-de="Dienstleistung wählen">Wybierz usługę</option>
-                <option value="remont" data-pl="Remont wnętrz" data-de="Innenrenovierung">Remont wnętrz</option>
-                <option value="budowa" data-pl="Budowa domu" data-de="Hausbau">Budowa domu</option>
-                <option value="malowanie" data-pl="Malowanie i elewacje" data-de="Malerarbeiten und Fassaden">Malowanie i elewacje</option>
-                <option value="inne" data-pl="Inne usługi" data-de="Andere Dienstleistungen">Inne usługi</option>
-              </select>
-            </div>
-            <div>
-              <label for="message" class="block text-gray-700 mb-2" data-pl="Wiadomość" data-de="Nachricht">Wiadomość</label>
-              <textarea id="message" name="message" rows="4" required 
-                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#d4af37] focus:border-transparent"></textarea>
-            </div>
-            <button type="submit" class="w-full bg-[#d4af37] text-white py-3 rounded-lg font-semibold hover:bg-[#b8941f] transition-colors" 
-                    data-pl="Wyślij wiadomość" data-de="Nachricht senden">Wyślij wiadomość</button>
+            <p id="bMsg" class="text-sm text-green-400 hidden">Opublikowano</p>
           </form>
-          <div id="formMessage" class="mt-4 hidden"></div>
+        </div>
+
+        <div id="blogList" class="mt-6 grid gap-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="kontakt" class="py-12 bg-white">
+    <div class="container mx-auto px-6">
+      <h3 class="text-2xl text-center gold-text" data-pl="Kontakt" data-de="Kontakt">Kontakt</h3>
+      <div class="max-w-4xl mx-auto mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-2xl shadow">
+          <h4 class="font-semibold text-[var(--nav-bg)]">Dane kontaktowe</h4>
+          <p class="mt-3 text-gray-600">📞 +49 123 456 7890</p>
+          <!-- user email removed per request -->
+          <p class="mt-2 text-gray-600">📍 Działamy na terenie Niemiec</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl shadow">
+          <h4 class="font-semibold text-[var(--nav-bg)]">Napisz do nas</h4>
+          <form id="contactForm" class="mt-3 space-y-3">
+            <input id="cName" placeholder="Twoje imię" class="w-full p-2 border rounded" required>
+            <input id="cEmail" type="email" placeholder="E-mail" class="w-full p-2 border rounded" required>
+            <textarea id="cMsg" placeholder="Wiadomość" rows="4" class="w-full p-2 border rounded" required></textarea>
+            <div class="flex justify-end">
+              <button type="submit" class="px-4 py-2 rounded reg-btn">Wyślij</button>
+            </div>
+            <p id="cAck" class="text-sm text-green-600 hidden">Wiadomość wysłana (symulacja)</p>
+          </form>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 🔹 Footer -->
-  <footer class="bg-[#081426] text-gray-400 py-6 text-center text-sm">
-    <div class="container mx-auto px-6">
-      <p>© 2025 Rafał Pistrakiewicz Bau & Renovierung | <span data-pl="Stworzone z dumą w Niemczech" data-de="Mit Stolz in Deutschland erstellt">Stworzone z dumą w Niemczech</span> 🇵🇱🇩🇪</p>
+  <!-- Footer -->
+  <footer class="bg-[var(--nav-bg)] text-white py-6">
+    <div class="container mx-auto px-6 text-center">
+      <p class="gold-text font-semibold">Rafał Pistrakiewicz Bau & Renovierung</p>
+      <p class="text-sm mt-1">© <span id="year"></span> All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- 🔹 Mobile Bottom Navigation -->
-  <nav class="mobile-bottom-nav">
-    <div class="nav-icons">
-      <a href="#o-nas" class="nav-icon">
-        <i class="fas fa-info-circle"></i>
-        <span data-pl="O nas" data-de="Über uns">O nas</span>
-      </a>
-      <a href="#uslugi" class="nav-icon">
-        <i class="fas fa-tools"></i>
-        <span data-pl="Usługi" data-de="Leistungen">Usługi</span>
-      </a>
-      <a href="#realizacje" class="nav-icon">
-        <i class="fas fa-images"></i>
-        <span data-pl="Realizacje" data-de="Projekte">Realizacje</span>
-      </a>
-      <a href="#opinie" class="nav-icon">
-        <i class="fas fa-star"></i>
-        <span data-pl="Opinie" data-de="Bewertungen">Opinie</span>
-      </a>
-      <a href="#kontakt" class="nav-icon">
-        <i class="fas fa-phone"></i>
-        <span data-pl="Kontakt" data-de="Kontakt">Kontakt</span>
-      </a>
-    </div>
-  </nav>
-
-  <!-- Cookie Consent Banner -->
-  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 hidden z-50">
-    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-      <p class="mb-4 md:mb-0 text-sm" data-pl="Ta strona używa plików cookies w celu poprawy jakości świadczonych usług. Dalsze korzystanie ze strony oznacza, że zgadzasz się na ich użycie." data-de="Diese Website verwendet Cookies, um die Qualität der angebotenen Dienstleistungen zu verbessern. Wenn Sie die Website weiter nutzen, stimmen Sie der Verwendung von Cookies zu.">
-        Ta strona używa plików cookies w celu poprawy jakości świadczonych usług. Dalsze korzystanie ze strony oznacza, że zgadzasz się na ich użycie.
-      </p>
-      <button onclick="acceptCookies()" class="bg-[#d4af37] text-white px-6 py-2 rounded-lg text-sm whitespace-nowrap">
-        <span data-pl="Akceptuję" data-de="Akzeptieren">Akceptuję</span>
-      </button>
+  <!-- Mobile bottom nav (simple) -->
+  <div class="mobile-bottom-nav">
+    <div class="nav-icons container mx-auto flex justify-around">
+      <a href="#o-nas" class="nav-icon"><i class="fa fa-home"></i><span class="text-xs">O nas</span></a>
+      <a href="#uslugi" class="nav-icon"><i class="fa fa-briefcase"></i><span class="text-xs">Usługi</span></a>
+      <a href="#realizacje" class="nav-icon"><i class="fa fa-image"></i><span class="text-xs">Realizacje</span></a>
+      <a href="#kontakt" class="nav-icon"><i class="fa fa-envelope"></i><span class="text-xs">Kontakt</span></a>
     </div>
   </div>
 
-  <!-- Back to Top Button -->
-  <button id="backToTop" class="fixed bottom-20 right-4 bg-[#d4af37] text-white p-3 rounded-full shadow-lg hidden z-40">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <!-- Gallery Modal -->
-  <div id="galleryModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
-    <button class="absolute top-4 right-4 text-white text-2xl z-10" onclick="closeModal()">
-      <i class="fas fa-times"></i>
-    </button>
-    <img id="modalImage" src="" class="max-w-full max-h-full object-contain">
+  <!-- Modal (image full) -->
+  <div id="imgModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50">
+    <div class="max-w-4xl w-full p-4">
+      <img id="imgModalImg" src="" alt="" class="w-full rounded" />
+      <div class="text-right mt-3">
+        <button onclick="closeModal()" class="px-4 py-2 rounded bg-white text-[var(--nav-bg)]">Zamknij</button>
+      </div>
+    </div>
   </div>
 
-  <!-- Strukturalne dane JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Rafał Pistrakiewicz Bau & Renovierung",
-    "description": "Polskie usługi budowlane w Niemczech",
-    "telephone": "+49-123-456-7890",
-    "email": "pistrakiewicz@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "DE"
-    },
-    "areaServed": "DE",
-    "serviceType": "Bau & Renovierung"
-  }
-  </script>
-
-  <!-- 🔧 Skrypty -->
+  <!-- SCRIPTS -->
   <script>
-    // Funkcja zmiany języka
-    function setLang(lang) {
-      document.documentElement.lang = lang;
-      document.querySelectorAll('[data-pl], [data-de]').forEach(el => {
-        if (el.hasAttribute(`data-${lang}`)) {
-          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT') {
-            el.placeholder = el.getAttribute(`data-${lang}`);
-          } else if (el.tagName === 'OPTION') {
-            el.textContent = el.getAttribute(`data-${lang}`);
-          } else {
-            el.textContent = el.getAttribute(`data-${lang}`);
-          }
-        }
+    // hide loading
+    window.addEventListener('load', ()=>{ const L=document.getElementById('loading'); if(L){L.style.display='none';} });
+
+    // mobile menu
+    document.getElementById('mobileMenuButton').addEventListener('click', ()=> {
+      const m = document.getElementById('mobileMenu'); if(!m) return;
+      m.classList.toggle('hidden');
+    });
+
+    // language toggle (simple)
+    const langButtons = document.querySelectorAll('.lang-btn');
+    function setLanguage(lang){
+      document.querySelectorAll('[data-pl]').forEach(el=>{
+        const pl = el.getAttribute('data-pl'); const de = el.getAttribute('data-de')||pl;
+        el.textContent = (lang==='de') ? de : pl;
       });
-      
-      // Zapisz preferencje użytkownika
-      localStorage.setItem('preferredLang', lang);
+      // realign for inputs/placeholders manually if needed
+      if(lang==='de'){
+        document.documentElement.lang='de';
+      } else {
+        document.documentElement.lang='pl';
+      }
     }
+    langButtons.forEach(b => b.addEventListener('click', ()=> setLanguage(b.dataset.lang || b.getAttribute('data-lang') || 'pl')));
+    // default pl
+    setLanguage('pl');
 
-    // Menu mobilne
-    document.getElementById('mobileMenuButton').addEventListener('click', function() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('hidden');
-    });
+    // modal open/close
+    function openModal(src){ document.getElementById('imgModalImg').src = src; document.getElementById('imgModal').classList.remove('hidden'); }
+    function closeModal(){ document.getElementById('imgModalImg').src=''; document.getElementById('imgModal').classList.add('hidden'); }
 
-    // Zamknij menu mobilne po kliknięciu w link
-    document.querySelectorAll('#mobileMenu a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('mobileMenu').classList.add('hidden');
+    // reviews data + small carousel
+    const reviewsData = [
+      {name:'Anna Nowak', text:'Profesjonalna obsługa i terminowe wykonanie. Polecam!', location:'Remont mieszkania, Berlin'},
+      {name:'Thomas Schmidt', text:'Solidna firma, dokładnie tak jak obiecali. Jakość na najwyższym poziomie.', location:'Budowa domu, Hamburg'},
+      {name:'Robert Weber', text:'Bardzo polecam! Rzetelni fachowcy w przystępnej cenie.', location:'Malowanie, Monachium'},
+      {name:'Michael Braun', text:'Perfekcyjna współpraca od początku do końca. Terminy dotrzymane w 100%.', location:'Elewacja, Frankfurt'}
+    ];
+    let revIdx=0;
+    function renderReviews(idx){
+      const container = document.getElementById('reviews'); if(!container) return;
+      container.innerHTML='';
+      const chunk = []; // show 3 per view or as many as exist
+      for(let i=0;i<3;i++){
+        const j = (idx+i) % reviewsData.length;
+        chunk.push(reviewsData[j]);
+      }
+      chunk.forEach(r=>{
+        const div=document.createElement('div');
+        div.className='bg-white p-6 rounded-2xl shadow';
+        div.innerHTML = '<div class="text-yellow-400 text-xl mb-2">★★★★★</div><p class="text-gray-600 mb-4">'+r.text+'</p><div class="flex items-center"><div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div><div><p class="font-semibold">'+r.name+'</p><p class="text-sm text-gray-500">'+r.location+'</p></div></div>';
+        container.appendChild(div);
       });
-    });
+    }
+    renderReviews(revIdx);
+    document.getElementById('revPrev').addEventListener('click', ()=>{ revIdx = (revIdx-1+reviewsData.length)%reviewsData.length; renderReviews(revIdx); });
+    document.getElementById('revNext').addEventListener('click', ()=>{ revIdx = (revIdx+1)%reviewsData.length; renderReviews(revIdx); });
 
-    // Improved Form Handling z wysyłaniem na email
-    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    // Ads form (simulation)
+    document.getElementById('adForm').addEventListener('submit', function(e){
       e.preventDefault();
-      
-      const formData = new FormData(this);
-      const submitBtn = this.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
-      const currentLang = document.documentElement.lang || 'pl';
-      
-      // Loading state
-      submitBtn.disabled = true;
-      if (currentLang === 'pl') {
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Wysyłanie...';
-      } else {
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Senden...';
-      }
-      
-      try {
-        // Przygotowanie danych do wysłania
-        const data = {
-          name: formData.get('name'),
-          email: formData.get('email'),
-          phone: formData.get('phone'),
-          service: formData.get('service'),
-          message: formData.get('message'),
-          language: currentLang
-        };
-        
-        // Wysłanie przez EmailJS (wymaga konfiguracji)
-        await sendEmail(data);
-        
-        showFormMessage('success', currentLang === 'pl' ? 'Wiadomość wysłana pomyślnie! Odpowiemy wkrótce.' : 'Nachricht erfolgreich gesendet! Wir antworten Ihnen bald.');
-        this.reset();
-      } catch (error) {
-        console.error('Błąd wysyłania:', error);
-        showFormMessage('error', currentLang === 'pl' ? 'Wystąpił błąd. Spróbuj ponownie lub zadzwoń.' : 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut oder rufen Sie an.');
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
-      }
+      const name = document.getElementById('adCompany').value.trim();
+      const msg = document.getElementById('adText').value.trim();
+      if(!name||!msg) return;
+      // simulate send
+      document.getElementById('adMsg').classList.remove('hidden');
+      setTimeout(()=>{ document.getElementById('adMsg').classList.add('hidden'); this.reset(); }, 2200);
     });
 
-    // Funkcja wysyłania emaila (do implementacji z EmailJS lub innym serwisem)
-    async function sendEmail(data) {
-      // Tutaj implementacja z EmailJS, FormSubmit.co lub innym serwisem
-      // Przykład z FormSubmit.co (darmowe, proste rozwiązanie)
-      const response = await fetch('https://formsubmit.co/ajax/pistrakiewicz@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          service: data.service,
-          message: data.message,
-          _subject: `Nowa wiadomość od ${data.name} - Pistrakiewicz Bau`,
-          _template: 'table'
-        })
-      });
-      
-      if (!response.ok) {
-        throw new Error('Błąd wysyłania formularza');
-      }
-      
-      return response.json();
-    }
-
-    function showFormMessage(type, message) {
-      const formMessage = document.getElementById('formMessage');
-      formMessage.textContent = message;
-      formMessage.className = 'mt-4 p-4 rounded-lg';
-      
-      if (type === 'success') {
-        formMessage.classList.add('bg-green-100', 'text-green-700');
-      } else {
-        formMessage.classList.add('bg-red-100', 'text-red-700');
-      }
-      
-      formMessage.classList.remove('hidden');
-      
-      // Ukryj wiadomość po 5 sekundach
-      setTimeout(() => {
-        formMessage.classList.add('hidden');
-      }, 5000);
-    }
-
-    // Carousel dla opinii
-    let currentReviewSet = 0;
-    const reviewSets = document.querySelectorAll('.carousel-item');
-    const dots = document.querySelectorAll('.carousel-dot');
-
-    function showReviewSet(index) {
-      reviewSets.forEach(set => set.classList.remove('active'));
-      dots.forEach(dot => dot.classList.remove('active'));
-      
-      reviewSets[index].classList.add('active');
-      dots[index].classList.add('active');
-      currentReviewSet = index;
-    }
-
-    // Automatyczna zmiana opinii co 12 godzin (43200000 ms)
-    setInterval(() => {
-      const nextSet = (currentReviewSet + 1) % reviewSets.length;
-      showReviewSet(nextSet);
-    }, 43200000); // 12 godzin
-
-    // Ręczna zmiana przez kropki
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        const index = parseInt(dot.getAttribute('data-index'));
-        showReviewSet(index);
-      });
+    // contact form (simulation)
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('cAck').classList.remove('hidden');
+      setTimeout(()=>{ document.getElementById('cAck').classList.add('hidden'); this.reset(); }, 2200);
     });
 
-    // Płynne przewijanie do sekcji
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
+    // blog: posts visible 48h (2 dni)
+    const BLOG_KEY = 'rp_blog_posts_v1';
+    const POST_TTL_MS = 2 * 24 * 60 * 60 * 1000; // 2 dni
+    function loadBlog(){ try{ const s=localStorage.getItem(BLOG_KEY); return s?JSON.parse(s):[] } catch(e){return[];} }
+    function saveBlog(arr){ localStorage.setItem(BLOG_KEY, JSON.stringify(arr)); }
+    function cleanupBlog(){
+      const now=Date.now();
+      let posts=loadBlog();
+      posts = posts.filter(p => !p.expiresAt || p.expiresAt > now);
+      saveBlog(posts);
+    }
+    function renderBlog(){
+      cleanupBlog();
+      const posts = loadBlog().sort((a,b)=> b.created - a.created);
+      const list = document.getElementById('blogList'); if(!list) return;
+      list.innerHTML='';
+      if(posts.length===0){ list.innerHTML = '<div class="text-gray-300 text-center py-8">Brak postów.</div>'; return; }
+      posts.forEach(p=>{
+        const d = new Date(p.created).toLocaleString();
+        const card = document.createElement('div');
+        card.className='p-4 rounded-2xl blog-card';
+        card.innerHTML = '<h4 class="font-semibold gold-head">'+escapeHtml(p.title)+'</h4><p class="text-gray-300 text-sm mt-1">Kategoria: '+escapeHtml(p.category)+' | '+d+'</p><p class="mt-3 text-gray-200">'+escapeHtml(p.excerpt)+'</p>';
+        list.appendChild(card);
+      });
+    }
+    function escapeHtml(s){ if(!s) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+    document.getElementById('blogAddForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const title=document.getElementById('bTitle').value.trim();
+      const excerpt=document.getElementById('bExcerpt').value.trim();
+      const content=document.getElementById('bContent').value.trim();
+      const category=document.getElementById('bCat').value;
+      if(!title||!excerpt||!content) return;
+      const posts = loadBlog();
+      const now=Date.now();
+      posts.push({ id:'p'+now, title, excerpt, content, category, created: now, expiresAt: now + POST_TTL_MS });
+      saveBlog(posts);
+      document.getElementById('bMsg').classList.remove('hidden');
+      setTimeout(()=>{ document.getElementById('bMsg').classList.add('hidden'); document.getElementById('blogAddForm').reset(); }, 1600);
+      renderBlog();
+    });
+    // initial render + interval to cleanup
+    renderBlog();
+    setInterval(renderBlog, 60*60*1000); // co godzinę
+
+    // image modal close on click outside
+    document.getElementById('imgModal').addEventListener('click', (e)=>{ if(e.target.id==='imgModal') closeModal(); });
+
+    // footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // small helper: remove any trace of the private email (mielniczuk...) if present
+    (function scrubPrivateEmail(){
+      const privatePattern = /mielniczukgrzegosz74@|mielniczukgrzegosz/ig;
+      document.querySelectorAll('*').forEach(el=>{
+        if(el.children.length===0 && el.textContent && privatePattern.test(el.textContent)){
+          el.textContent = el.textContent.replace(privatePattern, '[email removed]');
+        }
+        if(el.placeholder && privatePattern.test(el.placeholder)){
+          el.placeholder = el.placeholder.replace(privatePattern, '[email removed]');
         }
       });
-    });
+    })();
 
-    // Back to Top Button
-    const backToTopButton = document.getElementById('backToTop');
-    
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.remove('hidden');
-      } else {
-        backToTopButton.classList.add('hidden');
-      }
-    });
-    
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-
-    // Gallery Modal
-    function openModal(imageSrc) {
-      const modal = document.getElementById('galleryModal');
-      const modalImage = document.getElementById('modalImage');
-      modalImage.src = imageSrc;
-      modal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-      const modal = document.getElementById('galleryModal');
-      modal.classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    }
-
-    // Close modal on outside click
-    document.getElementById('galleryModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeModal();
-      }
-    });
-
-    // Cookie Banner
-    function checkCookies() {
-      if (!localStorage.getItem('cookiesAccepted')) {
-        document.getElementById('cookieBanner').classList.remove('hidden');
-      }
-    }
-
-    function acceptCookies() {
-      localStorage.setItem('cookiesAccepted', 'true');
-      document.getElementById('cookieBanner').classList.add('hidden');
-    }
-
-    // Scroll Animations
-    function checkScroll() {
-      const elements = document.querySelectorAll('.fade-in');
-      elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < window.innerHeight - elementVisible) {
-          element.classList.add('visible');
-        }
-      });
-    }
-
-    // Loading Spinner
-    window.addEventListener('load', function() {
-      setTimeout(() => {
-        document.getElementById('loading').style.display = 'none';
-        checkCookies();
-        checkScroll();
-      }, 1000);
-    });
-
-    window.addEventListener('scroll', checkScroll);
-
-    // Przy ładowaniu strony
-    document.addEventListener('DOMContentLoaded', function() {
-      const savedLang = localStorage.getItem('preferredLang') || 'pl';
-      setLang(savedLang);
-      
-      // Add fade-in class to sections
-      document.querySelectorAll('section').forEach(section => {
-        section.classList.add('fade-in');
-      });
-    });
   </script>
-
 </body>
 </html>
