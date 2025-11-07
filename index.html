@@ -16,6 +16,10 @@
   <meta property="og:url" content="https://twojastrona.com">
   <meta name="twitter:card" content="summary_large_image">
   
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,485 +113,6 @@
     .legal-section.open {
       max-height: 5000px;
     }
-
-    /* 🔥 CHATBOT MASTER - PERFEKCYJNA INTEGRACJA */
-    .construction-assistant {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 10000;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .assistant-toggle {
-      width: 70px;
-      height: 70px;
-      background: linear-gradient(135deg, #d4af37, #b8941f);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 8px 32px rgba(212, 175, 55, 0.4);
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      position: relative;
-      border: 3px solid #0a1a2f;
-    }
-
-    .assistant-toggle:hover {
-      transform: scale(1.1) rotate(5deg);
-      box-shadow: 0 12px 40px rgba(212, 175, 55, 0.6);
-    }
-
-    .assistant-toggle .tool-icon {
-      font-size: 1.8rem;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-    }
-
-    .pulse-ring {
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      right: -10px;
-      bottom: -10px;
-      border: 2px solid #d4af37;
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 1; }
-      100% { transform: scale(1.3); opacity: 0; }
-    }
-
-    .notification-bubble {
-      position: absolute;
-      top: -5px;
-      right: -5px;
-      background: #ff4444;
-      color: white;
-      border-radius: 50%;
-      width: 24px;
-      height: 24px;
-      font-size: 0.8rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: bounce 2s infinite;
-      border: 2px solid white;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-8px); }
-      60% { transform: translateY(-4px); }
-    }
-
-    .assistant-window {
-      position: absolute;
-      bottom: 90px;
-      right: 0;
-      width: 420px;
-      height: 680px;
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      border: 3px solid #d4af37;
-      transform-origin: bottom right;
-      animation: windowAppear 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    @keyframes windowAppear {
-      from { opacity: 0; transform: scale(0.8) translateY(20px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-
-    .assistant-header {
-      background: linear-gradient(135deg, #0a1a2f, #1e3a5f);
-      color: white;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: relative;
-    }
-
-    .contractor-profile {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .contractor-avatar {
-      width: 50px;
-      height: 50px;
-      background: #d4af37;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 1.2rem;
-      border: 2px solid white;
-    }
-
-    .contractor-info h3 {
-      margin: 0;
-      font-size: 1.1rem;
-    }
-
-    .contractor-info .status {
-      font-size: 0.8rem;
-      opacity: 0.8;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      background: #4CAF50;
-      border-radius: 50%;
-      animation: glow 2s infinite;
-    }
-
-    @keyframes glow {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-
-    .header-actions {
-      display: flex;
-      gap: 10px;
-    }
-
-    .btn-call {
-      background: #d4af37;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .btn-call:hover {
-      background: #b8941f;
-      transform: translateY(-2px);
-    }
-
-    .btn-close {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.3s ease;
-    }
-
-    .btn-close:hover {
-      background: rgba(255,255,255,0.1);
-    }
-
-    /* QUICK SERVICES GRID */
-    .quick-services {
-      padding: 20px;
-      background: #f8f9fa;
-      border-bottom: 1px solid #e0e0e0;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .service-card {
-      background: white;
-      border: 2px solid #e0e0e0;
-      border-radius: 12px;
-      padding: 15px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .service-card:hover {
-      border-color: #d4af37;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
-    }
-
-    .service-icon {
-      font-size: 1.5rem;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f0f0f0;
-      border-radius: 10px;
-    }
-
-    .service-card span {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #0a1a2f;
-    }
-
-    /* CHAT MESSAGES */
-    .chat-messages {
-      flex: 1;
-      padding: 20px;
-      overflow-y: auto;
-      background: #f8f9fa;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .message {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      animation: messageSlide 0.3s ease-out;
-    }
-
-    @keyframes messageSlide {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .message.bot .avatar {
-      width: 36px;
-      height: 36px;
-      background: #d4af37;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      flex-shrink: 0;
-    }
-
-    .message.user {
-      justify-content: flex-end;
-    }
-
-    .message.user .content {
-      background: linear-gradient(135deg, #0a1a2f, #1e3a5f);
-      color: white;
-      order: -1;
-    }
-
-    .message.bot .content {
-      background: white;
-      color: #333;
-      border: 1px solid #e0e0e0;
-    }
-
-    .message .content {
-      padding: 12px 16px;
-      border-radius: 18px;
-      max-width: 280px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      line-height: 1.4;
-    }
-
-    .message-time {
-      font-size: 0.7rem;
-      opacity: 0.6;
-      margin-top: 5px;
-      text-align: right;
-    }
-
-    /* QUICK ACTIONS */
-    .quick-actions {
-      padding: 15px 20px;
-      background: white;
-      border-top: 1px solid #e0e0e0;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .quick-action-btn {
-      background: linear-gradient(135deg, #d4af37, #b8941f);
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 0.8rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      white-space: nowrap;
-    }
-
-    .quick-action-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
-    }
-
-    /* CHAT INPUT */
-    .chat-input-container {
-      padding: 20px;
-      background: white;
-      border-top: 1px solid #e0e0e0;
-      display: flex;
-      gap: 12px;
-      align-items: flex-end;
-    }
-
-    .chat-input-wrapper {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .chat-input {
-      width: 100%;
-      padding: 12px 16px;
-      border: 2px solid #e0e0e0;
-      border-radius: 25px;
-      outline: none;
-      font-family: 'Poppins', sans-serif;
-      resize: none;
-      max-height: 100px;
-      min-height: 20px;
-      transition: border-color 0.3s ease;
-    }
-
-    .chat-input:focus {
-      border-color: #d4af37;
-    }
-
-    .input-actions {
-      display: flex;
-      gap: 8px;
-    }
-
-    .action-btn {
-      background: none;
-      border: none;
-      color: #666;
-      cursor: pointer;
-      padding: 8px;
-      border-radius: 50%;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .action-btn:hover {
-      background: #f0f0f0;
-      color: #d4af37;
-    }
-
-    .btn-send {
-      background: #d4af37;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      flex-shrink: 0;
-    }
-
-    .btn-send:hover {
-      background: #b8941f;
-      transform: scale(1.05);
-    }
-
-    .btn-send:disabled {
-      background: #cccccc;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    /* TYPING INDICATOR */
-    .typing-indicator {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      padding: 12px 16px;
-      background: white;
-      border-radius: 18px;
-      border: 1px solid #e0e0e0;
-      width: fit-content;
-    }
-
-    .typing-dot {
-      width: 8px;
-      height: 8px;
-      background: #d4af37;
-      border-radius: 50%;
-      animation: typing 1.4s infinite ease-in-out;
-    }
-
-    .typing-dot:nth-child(1) { animation-delay: -0.32s; }
-    .typing-dot:nth-child(2) { animation-delay: -0.16s; }
-
-    @keyframes typing {
-      0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
-      40% { transform: scale(1); opacity: 1; }
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .construction-assistant {
-        bottom: 15px;
-        right: 15px;
-      }
-
-      .assistant-toggle {
-        width: 60px;
-        height: 60px;
-      }
-
-      .assistant-window {
-        width: calc(100vw - 30px);
-        height: 70vh;
-        right: -8px;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .quick-actions {
-        justify-content: center;
-      }
-    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900 smooth-scroll">
@@ -604,11 +129,12 @@
       
       <!-- Menu desktop -->
       <nav class="hidden md:flex space-x-8">
-        <a href="#o-nas" class="hover:text-[#d4af37] transition-colors">O nas</a>
-        <a href="#uslugi" class="hover:text-[#d4af37] transition-colors">Usługi</a>
-        <a href="#realizacje" class="hover:text-[#d4af37] transition-colors">Realizacje</a>
-        <a href="#opinie" class="hover:text-[#d4af37] transition-colors">Opinie</a>
-        <a href="#kontakt" class="hover:text-[#d4af37] transition-colors">Kontakt</a>
+        <a href="#o-nas" class="hover:text-[#d4af37] transition-colors" data-pl="O nas" data-de="Über uns">O nas</a>
+        <a href="#uslugi" class="hover:text-[#d4af37] transition-colors" data-pl="Usługi" data-de="Dienstleistungen">Usługi</a>
+        <a href="#realizacje" class="hover:text-[#d4af37] transition-colors" data-pl="Realizacje" data-de="Projekte">Realizacje</a>
+        <a href="#opinie" class="hover:text-[#d4af37] transition-colors" data-pl="Opinie" data-de="Bewertungen">Opinie</a>
+        <a href="#partnerzy" class="hover:text-[#d4af37] transition-colors" data-pl="Partnerzy" data-de="Partner">Partnerzy</a>
+        <a href="#kontakt" class="hover:text-[#d4af37] transition-colors" data-pl="Kontakt" data-de="Kontakt">Kontakt</a>
       </nav>
       
       <div class="flex items-center gap-4">
@@ -634,11 +160,12 @@
     <!-- Menu mobilne -->
     <div id="mobileMenu" class="absolute top-16 left-0 w-full bg-[#0a1a2f] hidden md:hidden">
       <div class="flex flex-col space-y-4 p-6">
-        <a href="#o-nas" class="text-white hover:text-[#d4af37] transition-colors">O nas</a>
-        <a href="#uslugi" class="text-white hover:text-[#d4af37] transition-colors">Usługi</a>
-        <a href="#realizacje" class="text-white hover:text-[#d4af37] transition-colors">Realizacje</a>
-        <a href="#opinie" class="text-white hover:text-[#d4af37] transition-colors">Opinie</a>
-        <a href="#kontakt" class="text-white hover:text-[#d4af37] transition-colors">Kontakt</a>
+        <a href="#o-nas" class="text-white hover:text-[#d4af37] transition-colors" data-pl="O nas" data-de="Über uns">O nas</a>
+        <a href="#uslugi" class="text-white hover:text-[#d4af37] transition-colors" data-pl="Usługi" data-de="Dienstleistungen">Usługi</a>
+        <a href="#realizacje" class="text-white hover:text-[#d4af37] transition-colors" data-pl="Realizacje" data-de="Projekte">Realizacje</a>
+        <a href="#opinie" class="text-white hover:text-[#d4af37] transition-colors" data-pl="Opinie" data-de="Bewertungen">Opinie</a>
+        <a href="#partnerzy" class="text-white hover:text-[#d4af37] transition-colors" data-pl="Partnerzy" data-de="Partner">Partnerzy</a>
+        <a href="#kontakt" class="text-white hover:text-[#d4af37] transition-colors" data-pl="Kontakt" data-de="Kontakt">Kontakt</a>
         <div class="pt-4 border-t border-gray-700">
           <p class="text-white">📞 +49 694 526 240</p>
           <p class="text-white">📞 +49 1516 3675 548</p>
@@ -651,21 +178,24 @@
   <!-- 🔹 Hero -->
   <section class="bg-gradient-to-r from-[#0a1a2f] to-[#1e3a5f] text-white py-20 md:py-24 text-center">
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Polska fachowość, niemiecka precyzja</h2>
-      <p class="text-base md:text-lg text-gray-200 max-w-2xl mx-auto mb-8">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4" data-pl="Polska fachowość, niemiecka precyzja" data-de="Polnische Facharbeit, deutsche Präzision">Polska fachowość, niemiecka precyzja</h2>
+      <p class="text-base md:text-lg text-gray-200 max-w-2xl mx-auto mb-8" data-pl="Zaufaj doświadczeniu i rzetelności. Nasze realizacje mówią same za siebie." data-de="Vertrauen Sie auf Erfahrung und Zuverlässigkeit. Unsere Arbeiten sprechen für sich.">
         Zaufaj doświadczeniu i rzetelności. Nasze realizacje mówią same za siebie.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#kontakt" class="bg-[#d4af37] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b8941f] transition-colors inline-block text-center">Zapytaj o wycenę</a>
-        <a href="#realizacje" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#0a1a2f] transition-colors inline-block text-center">Zobacz realizacje</a>
+        <a href="#kontakt" class="bg-[#d4af37] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b8941f] transition-colors inline-block text-center" 
+           data-pl="Zapytaj o wycenę" data-de="Kostenangebot anfordern">Zapytaj o wycenę</a>
+        <a href="#realizacje" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#0a1a2f] transition-colors inline-block text-center" 
+           data-pl="Zobacz realizacje" data-de="Projekte ansehen">Zobacz realizacje</a>
       </div>
     </div>
   </section>
 
   <!-- 🔹 O nas -->
   <section id="o-nas" class="py-12 md:py-16 container mx-auto px-6">
-    <h3 class="text-2xl md:text-3xl font-semibold text-center mb-8 text-[#0a1a2f]">O nas</h3>
+    <h3 class="text-2xl md:text-3xl font-semibold text-center mb-8 text-[#0a1a2f]" data-pl="O nas" data-de="Über uns">O nas</h3>
     
+    <!-- TWÓJ TEKST DODANY TUTAJ -->
     <div class="text-center text-base md:text-lg max-w-3xl mx-auto mb-8 md:mb-12">
         <p>Zaczynaliśmy od jednego narzędzia i marzenia, żeby robić rzeczy lepiej.</p>
         <p>Dziś pracujemy w Niemczech, z tą samą precyzją, cierpliwością i dumą, która towarzyszyła nam od początku.</p>
@@ -675,18 +205,18 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12">
       <div class="text-center bg-white p-6 rounded-2xl shadow-lg">
         <div class="bg-[#d4af37] text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">10+</div>
-        <h4 class="text-lg md:text-xl font-semibold mb-2">Lat doświadczenia</h4>
-        <p class="text-gray-600 text-sm md:text-base">W branży budowlanej</p>
+        <h4 class="text-lg md:text-xl font-semibold mb-2" data-pl="Lat doświadczenia" data-de="Jahre Erfahrung">Lat doświadczenia</h4>
+        <p class="text-gray-600 text-sm md:text-base" data-pl="W branży budowlanej" data-de="In der Baubranche">W branży budowlanej</p>
       </div>
       <div class="text-center bg-white p-6 rounded-2xl shadow-lg">
         <div class="bg-[#d4af37] text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">200+</div>
-        <h4 class="text-lg md:text-xl font-semibold mb-2">Zrealizowanych projektów</h4>
-        <p class="text-gray-600 text-sm md:text-base">Zadowolonych klientów</p>
+        <h4 class="text-lg md:text-xl font-semibold mb-2" data-pl="Zrealizowanych projektów" data-de="Abgeschlossene Projekte">Zrealizowanych projektów</h4>
+        <p class="text-gray-600 text-sm md:text-base" data-pl="Zadowolonych klientów" data-de="Zufriedene Kunden">Zadowolonych klientów</p>
       </div>
       <div class="text-center bg-white p-6 rounded-2xl shadow-lg">
         <div class="bg-[#d4af37] text-white w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">100%</div>
-        <h4 class="text-lg md:text-xl font-semibold mb-2">Gwarancja jakości</h4>
-        <p class="text-gray-600 text-sm md:text-base">Terminowo i solidnie</p>
+        <h4 class="text-lg md:text-xl font-semibold mb-2" data-pl="Gwarancja jakości" data-de="Qualitätsgarantie">Gwarancja jakości</h4>
+        <p class="text-gray-600 text-sm md:text-base" data-pl="Terminowo i solidnie" data-de="Termingerecht und solide">Terminowo i solidnie</p>
       </div>
     </div>
   </section>
@@ -694,37 +224,37 @@
   <!-- 🔹 Usługi -->
   <section id="uslugi" class="bg-[#f9fafb] py-12 md:py-16">
     <div class="container mx-auto px-6">
-      <h3 class="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12 text-[#0a1a2f]">Nasze usługi</h3>
+      <h3 class="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12 text-[#0a1a2f]" data-pl="Nasze usługi" data-de="Unsere Dienstleistungen">Nasze usługi</h3>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
           <div class="bg-[#0a1a2f] text-[#d4af37] w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">🏗️</div>
-          <h4 class="text-lg md:text-xl font-semibold mb-2 text-[#d4af37]">Sucha zabudowa</h4>
-          <p class="text-gray-600 text-sm md:text-base">Kompleksowe wykonanie ścianek, sufitów podwieszanych i zabudów.</p>
+          <h4 class="text-lg md:text-xl font-semibold mb-2 text-[#d4af37]" data-pl="Sucha zabudowa" data-de="Trockenbau">Sucha zabudowa</h4>
+          <p class="text-gray-600 text-sm md:text-base" data-pl="Kompleksowe wykonanie ścianek, sufitów podwieszanych i zabudów." data-de="Komplette Ausführung von Trennwänden, abgehängten Decken und Einbauten.">Kompleksowe wykonanie ścianek, sufitów podwieszanych i zabudów.</p>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
           <div class="bg-[#0a1a2f] text-[#d4af37] w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">🎨</div>
-          <h4 class="text-lg md:text-xl font-semibold mb-2 text-[#d4af37]">Szpachlowanie i malowanie</h4>
-          <p class="text-gray-600 text-sm md:text-base">Profesjonalne przygotowanie powierzchni i malowanie wnętrz.</p>
+          <h4 class="text-lg md:text-xl font-semibold mb-2 text-[#d4af37]" data-pl="Szpachlowanie i malowanie" data-de="Spachteln und Malern">Szpachlowanie i malowanie</h4>
+          <p class="text-gray-600 text-sm md:text-base" data-pl="Profesjonalne przygotowanie powierzchni i malowanie wnętrz." data-de="Professionelle Oberflächenvorbereitung und Innenraummalerei.">Profesjonalne przygotowanie powierzchni i malowanie wnętrz.</p>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
           <div class="bg-[#0a1a2f] text-[#d4af37] w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">🏠</div>
-          <h4 class="text-lg md:text-xl font-semibold mb-2 text-[#d4af37]">Kompleksowe wykończenia</h4>
-          <p class="text-gray-600 text-sm md:text-base">Tapety, płytki, podłogi winylowe - kompletne wykończenie mieszkań.</p>
+          <h4 class="text-lg md:text-xl font-semibold mb-2 text-[#d4af37]" data-pl="Kompleksowe wykończenia" data-de="Komplette Innenausbauten">Kompleksowe wykończenia</h4>
+          <p class="text-gray-600 text-sm md:text-base" data-pl="Tapety, płytki, podłogi winylowe - kompletne wykończenie mieszkań." data-de="Tapeten, Fliesen, Vinylböden - kompletter Innenausbau von Wohnungen.">Tapety, płytki, podłogi winylowe - kompletne wykończenie mieszkań.</p>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
           <div class="bg-[#0a1a2f] text-[#d4af37] w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">🔥</div>
-          <h4 class="text-lg md:text-xl font-semibold mb-2 text-[#d4af37]">Ocieplenia i elewacje</h4>
-          <p class="text-gray-600 text-sm md:text-base">Kompleksowe ocieplenia budynkowe i prace elewacyjne.</p>
+          <h4 class="text-lg md:text-xl font-semibold mb-2 text-[#d4af37]" data-pl="Ocieplenia i elewacje" data-de="Wärmedämmung und Fassaden">Ocieplenia i elewacje</h4>
+          <p class="text-gray-600 text-sm md:text-base" data-pl="Kompleksowe ocieplenia budynkowe i prace elewacyjne." data-de="Umfassende Gebäudedämmung und Fassadenarbeiten.">Kompleksowe ocieplenia budynkowe i prace elewacyjne.</p>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
           <div class="bg-[#0a1a2f] text-[#d4af37] w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">🚪</div>
-          <h4 class="text-lg md:text-xl font-semibold mb-2 text-[#d4af37]">Montaż okien i drzwi</h4>
-          <p class="text-gray-600 text-sm md:text-base">Profesjonalny montaż okien, drzwi oraz ogólne wykończenia.</p>
+          <h4 class="text-lg md:text-xl font-semibold mb-2 text-[#d4af37]" data-pl="Montaż okien i drzwi" data-de="Fenster- und Türeneinbau">Montaż okien i drzwi</h4>
+          <p class="text-gray-600 text-sm md:text-base" data-pl="Profesjonalny montaż okien, drzwi oraz ogólne wykończenia." data-de="Professioneller Einbau von Fenstern, Türen und allgemeine Ausbauarbeiten.">Profesjonalny montaż okien, drzwi oraz ogólne wykończenia.</p>
         </div>
         <div class="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
           <div class="bg-[#0a1a2f] text-[#d4af37] w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mx-auto mb-4 text-xl md:text-2xl">🔧</div>
-          <h4 class="text-lg md:text-xl font-semibold mb-2 text-[#d4af37]">Remonty kompleksowe</h4>
-          <p class="text-gray-600 text-sm md:text-base">Od A do Z - kompleksowe remonty mieszkań i domów.</p>
+          <h4 class="text-lg md:text-xl font-semibold mb-2 text-[#d4af37]" data-pl="Remonty kompleksowe" data-de="Komplette Renovierungen">Remonty kompleksowe</h4>
+          <p class="text-gray-600 text-sm md:text-base" data-pl="Od A do Z - kompleksowe remonty mieszkań i domów." data-de="Von A bis Z - komplette Renovierungen von Wohnungen und Häusern.">Od A do Z - kompleksowe remonty mieszkań i domów.</p>
         </div>
       </div>
     </div>
@@ -733,28 +263,208 @@
   <!-- 🔹 Galeria realizacji -->
   <section id="realizacje" class="py-12 md:py-16 bg-white">
     <div class="container mx-auto px-6">
-      <h3 class="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12 text-[#0a1a2f]">Nasze realizacje</h3>
+      <h3 class="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12 text-[#0a1a2f]" 
+          data-pl="Nasze realizacje" data-de="Unsere Projekte">Nasze realizacje</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         <div class="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer" onclick="openModal('https://i.ibb.co/zTqrdpd8/Messenger-creation-1-BA12-A52-3-A28-4-B89-A181-CEB248-DFA352.jpg')">
           <img src="https://i.ibb.co/zTqrdpd8/Messenger-creation-1-BA12-A52-3-A28-4-B89-A181-CEB248-DFA352.jpg" 
                alt="Realizacja 1 - Sucha zabudowa i wykończenie" class="w-full h-48 md:h-64 object-cover transition-transform group-hover:scale-105" loading="lazy">
           <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="text-white font-semibold text-base md:text-lg">Sucha zabudowa i wykończenie</span>
+            <span class="text-white font-semibold text-base md:text-lg" data-pl="Sucha zabudowa i wykończenie" data-de="Trockenbau und Ausbau">Sucha zabudowa i wykończenie</span>
           </div>
         </div>
         <div class="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer" onclick="openModal('https://i.ibb.co/JWqHCP9X/Messenger-creation-53-D3-FC19-EF77-4706-B30-E-8-D546-FCAE65-C.jpg')">
           <img src="https://i.ibb.co/JWqHCP9X/Messenger-creation-53-D3-FC19-EF77-4706-B30-E-8-D546-FCAE65-C.jpg" 
                alt="Realizacja 2 - Kompleksowy remont łazienki" class="w-full h-48 md:h-64 object-cover transition-transform group-hover:scale-105" loading="lazy">
           <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="text-white font-semibold text-base md:text-lg">Kompleksowy remont łazienki</span>
+            <span class="text-white font-semibold text-base md:text-lg" data-pl="Kompleksowy remont łazienki" data-de="Komplette Badezimmerrenovierung">Kompleksowy remont łazienki</span>
           </div>
         </div>
         <div class="group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer" onclick="openModal('https://i.ibb.co/ZRsSc0JS/Messenger-creation-6-C03-E7-ED-0430-4649-A136-2014-E0-F7-F9-D3.jpg')">
           <img src="https://i.ibb.co/ZRsSc0JS/Messenger-creation-6-C03-E7-ED-0430-4649-A136-2014-E0-F7-F9-D3.jpg" 
                alt="Realizacja 3 - Prace wykończeniowe i montaż" class="w-full h-48 md:h-64 object-cover transition-transform group-hover:scale-105" loading="lazy">
           <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="text-white font-semibold text-base md:text-lg">Prace wykończeniowe i montaż</span>
+            <span class="text-white font-semibold text-base md:text-lg" data-pl="Prace wykończeniowe i montaż" data-de="Ausbauarbeiten und Montage">Prace wykończeniowe i montaż</span>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Nowa sekcja: Opinie klientów -->
+  <section id="opinie" class="py-12 md:py-16 bg-[#f9fafb]">
+    <div class="container mx-auto px-6">
+      <h3 class="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12 text-[#0a1a2f]" 
+          data-pl="Opinie naszych klientów" data-de="Kundenbewertungen">Opinie naszych klientów</h3>
+      <div class="relative">
+        <div class="carousel-container">
+          <div class="carousel-item active">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              <div class="bg-white rounded-2xl shadow-lg p-6">
+                <div class="flex items-center mb-4">
+                  <div class="text-yellow-400 text-xl">★★★★★</div>
+                </div>
+                <p class="text-gray-600 mb-4" data-pl="Profesjonalna obsługa i terminowe wykonanie. Polecam!" data-de="Professioneller Service und termingerechte Ausführung. Sehr zu empfehlen!">Profesjonalna obsługa i terminowe wykonanie. Polecam!</p>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <div>
+                    <p class="font-semibold">Anna Nowak</p>
+                    <p class="text-sm text-gray-500" data-pl="Remont mieszkania, Berlin" data-de="Wohnungsrenovierung, Berlin">Remont mieszkania, Berlin</p>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white rounded-2xl shadow-lg p-6">
+                <div class="flex items-center mb-4">
+                  <div class="text-yellow-400 text-xl">★★★★★</div>
+                </div>
+                <p class="text-gray-600 mb-4" data-pl="Solidna firma, dokładnie tak jak obiecali. Jakość na najwyższym poziomie." data-de="Solides Unternehmen, genau wie versprochen. Qualität auf höchstem Niveau.">Solidna firma, dokładnie tak jak obiecali. Jakość na najwyższym poziomie.</p>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <div>
+                    <p class="font-semibold">Thomas Schmidt</p>
+                    <p class="text-sm text-gray-500" data-pl="Sucha zabudowa, Hamburg" data-de="Trockenbau, Hamburg">Sucha zabudowa, Hamburg</p>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white rounded-2xl shadow-lg p-6">
+                <div class="flex items-center mb-4">
+                  <div class="text-yellow-400 text-xl">★★★★★</div>
+                </div>
+                <p class="text-gray-600 mb-4" data-pl="Bardzo polecam! Rzetelni fachowcy w przystępnej cenie." data-de="Sehr empfehlenswert! Zuverlässige Fachleute zu einem fairen Preis.">Bardzo polecam! Rzetelni fachowcy w przystępnej cenie.</p>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <div>
+                    <p class="font-semibold">Robert Weber</p>
+                    <p class="text-sm text-gray-500" data-pl="Malowanie, Monachium" data-de="Malerarbeiten, München">Malowanie, Monachium</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              <div class="bg-white rounded-2xl shadow-lg p-6">
+                <div class="flex items-center mb-4">
+                  <div class="text-yellow-400 text-xl">★★★★★</div>
+                </div>
+                <p class="text-gray-600 mb-4" data-pl="Perfekcyjna współpraca od początku do końca. Terminy dotrzymane w 100%." data-de="Perfekte Zusammenarbeit von Anfang bis Ende. Termine zu 100% eingehalten.">Perfekcyjna współpraca od początku do końca. Terminy dotrzymane w 100%.</p>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <div>
+                    <p class="font-semibold">Michael Braun</p>
+                    <p class="text-sm text-gray-500" data-pl="Elewacja, Frankfurt" data-de="Fassade, Frankfurt">Elewacja, Frankfurt</p>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white rounded-2xl shadow-lg p-6">
+                <div class="flex items-center mb-4">
+                  <div class="text-yellow-400 text-xl">★★★★★</div>
+                </div>
+                <p class="text-gray-600 mb-4" data-pl="Jakość wykonania przewyższyła moje oczekiwania. Na pewno jeszcze skorzystam." data-de="Die Ausführungsqualität übertraf meine Erwartungen. Ich werde sicher wieder davon Gebrauch machen.">Jakość wykonania przewyższyła moje oczekiwania. Na pewno jeszcze skorzystam.</p>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <div>
+                    <p class="font-semibold">Katarzyna Woźniak</p>
+                    <p class="text-sm text-gray-500" data-pl="Kompleksowy remont, Kolonia" data-de="Komplette Renovierung, Köln">Kompleksowy remont, Kolonia</p>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white rounded-2xl shadow-lg p-6">
+                <div class="flex items-center mb-4">
+                  <div class="text-yellow-400 text-xl">★★★★★</div>
+                </div>
+                <p class="text-gray-600 mb-4" data-pl="Komunikacja na najwyższym poziomie. Wszystko dokładnie wyjaśnione." data-de="Kommunikation auf höchstem Niveau. Alles genau erklärt.">Komunikacja na najwyższym poziomie. Wszystko dokładnie wyjaśnione.</p>
+                <div class="flex items-center">
+                  <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                  <div>
+                    <p class="font-semibold">Hans Müller</p>
+                    <p class="text-sm text-gray-500" data-pl="Montaż okien, Düsseldorf" data-de="Fenstereinbau, Düsseldorf">Montaż okien, Düsseldorf</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center mt-6 space-x-2">
+          <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300 active" data-index="0"></button>
+          <button class="carousel-dot w-3 h-3 rounded-full bg-gray-300" data-index="1"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Partnerzy -->
+  <section id="partnerzy" class="py-12 md:py-16 container mx-auto px-6">
+    <h3 class="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12 text-[#0a1a2f]" data-pl="Partnerzy i współpraca" data-de="Partner und Zusammenarbeit">Partnerzy i współpraca</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center">
+      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+        <img src="https://via.placeholder.com/150x80?text=Partner+1" class="mx-auto mb-4" alt="Partner 1" loading="lazy">
+        <p class="font-semibold">Pol-Bau GmbH</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+        <img src="https://via.placeholder.com/150x80?text=Partner+2" class="mx-auto mb-4" alt="Partner 2" loading="lazy">
+        <p class="font-semibold">HausRenovieren24</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+        <img src="https://via.placeholder.com/150x80?text=Partner+3" class="mx-auto mb-4" alt="Partner 3" loading="lazy">
+        <p class="font-semibold">ElektroKraft</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Znajdź nas -->
+  <section id="znajdz-nas" class="py-12 md:py-16 bg-[#f9fafb]">
+    <div class="container mx-auto px-6">
+      <h3 class="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12 text-[#0a1a2f]" 
+          data-pl="Znajdź nas tutaj" data-de="Finden Sie uns hier">Znajdź nas tutaj</h3>
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+        <div class="bg-white rounded-2xl p-6 shadow-lg">
+          <h4 class="text-xl font-semibold mb-4 text-[#d4af37]" data-pl="Lokalizacja" data-de="Standort">Lokalizacja</h4>
+          <p class="text-gray-600 mb-4" data-pl="Działamy na terenie całych Niemiec, ze szczególnym uwzględnieniem następujących regionów:" data-de="Wir arbeiten in ganz Deutschland mit Schwerpunkt auf folgenden Regionen:">
+            Działamy na terenie całych Niemiec, ze szczególnym uwzględnieniem następujących regionów:
+          </p>
+          <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+            <li data-pl="Berlin i Brandenburgia" data-de="Berlin und Brandenburg">Berlin i Brandenburgia</li>
+            <li data-pl="Bawaria" data-de="Bayern">Bawaria</li>
+            <li data-pl="Nadrenia Północna-Westfalia" data-de="Nordrhein-Westfalen">Nadrenia Północna-Westfalia</li>
+            <li data-pl="Dolna Saksonia" data-de="Niedersachsen">Dolna Saksonia</li>
+            <li data-pl="Hesja" data-de="Hessen">Hesja</li>
+          </ul>
+          <div class="space-y-3">
+            <p class="flex items-center text-gray-700">
+              <i class="fas fa-phone-alt text-[#d4af37] mr-3"></i>
+              <span>+49 694 526 240</span>
+            </p>
+            <p class="flex items-center text-gray-700">
+              <i class="fas fa-mobile-alt text-[#d4af37] mr-3"></i>
+              <span>+49 1516 3675 548</span>
+            </p>
+            <p class="flex items-center text-gray-700">
+              <i class="fas fa-envelope text-[#d4af37] mr-3"></i>
+              <span>pistrakiewicz@gmail.com</span>
+            </p>
+            <p class="flex items-center text-gray-700">
+              <i class="fas fa-clock text-[#d4af37] mr-3"></i>
+              <span data-pl="Pon-Pt: 7:00-18:00, Sob: 8:00-14:00" data-de="Mo-Fr: 7:00-18:00, Sa: 8:00-14:00">Pon-Pt: 7:00-18:00, Sob: 8:00-14:00</span>
+            </p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-lg">
+          <!-- Mapa Google -->
+          <div class="h-96 rounded-lg overflow-hidden">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155433.129886108!2d13.284649499999999!3d52.5065133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e373f035901%3A0x42120465b5e3b70!2sBerlin%2C%20Niemcy!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <p class="text-center text-gray-600 mt-4 text-sm" data-pl="Centralna lokalizacja w Berlinie - dojazd do całych Niemiec" data-de="Zentrale Lage in Berlin - Erreichbar in ganz Deutschland">
+            Centralna lokalizacja w Berlinie - dojazd do całych Niemiec
+          </p>
         </div>
       </div>
     </div>
@@ -763,11 +473,11 @@
   <!-- 🔹 Kontakt -->
   <section id="kontakt" class="bg-[#0a1a2f] text-white py-12 md:py-16">
     <div class="container mx-auto px-6">
-      <h3 class="text-2xl md:text-3xl font-semibold mb-6 md:mb-8 text-[#d4af37] text-center">Skontaktuj się z nami</h3>
+      <h3 class="text-2xl md:text-3xl font-semibold mb-6 md:mb-8 text-[#d4af37] text-center" data-pl="Skontaktuj się z nami" data-de="Kontaktieren Sie uns">Skontaktuj się z nami</h3>
       
       <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         <div>
-          <p class="mb-4 md:mb-6 text-base md:text-lg">Zadzwoń lub napisz, aby omówić swój projekt.</p>
+          <p class="mb-4 md:mb-6 text-base md:text-lg" data-pl="Zadzwoń lub napisz, aby omówić swój projekt." data-de="Rufen Sie an oder schreiben Sie uns, um Ihr Projekt zu besprechen.">Zadzwoń lub napisz, aby omówić swój projekt.</p>
           <div class="space-y-3 md:space-y-4">
             <p class="text-base md:text-lg flex items-center">
               <span class="mr-3">📞</span> +49 694 526 240
@@ -779,7 +489,7 @@
               <span class="mr-3">✉️</span> pistrakiewicz@gmail.com
             </p>
             <p class="text-base md:text-lg flex items-center">
-              <span class="mr-3">📍</span> Działamy na terenie całych Niemiec
+              <span class="mr-3">📍</span> <span data-pl="Działamy na terenie całych Niemiec" data-de="Wir arbeiten in ganz Deutschland">Działamy na terenie całych Niemiec</span>
             </p>
           </div>
         </div>
@@ -788,7 +498,7 @@
         <div class="bg-white rounded-2xl p-6 md:p-8 shadow-lg">
           <form id="contactForm" class="space-y-4 md:space-y-6">
             <div>
-              <label for="name" class="block text-gray-700 mb-2">Imię i nazwisko</label>
+              <label for="name" class="block text-gray-700 mb-2" data-pl="Imię i nazwisko" data-de="Name">Imię i nazwisko</label>
               <input type="text" id="name" name="name" required 
                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#d4af37] focus:border-transparent">
             </div>
@@ -798,16 +508,29 @@
                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#d4af37] focus:border-transparent">
             </div>
             <div>
-              <label for="phone" class="block text-gray-700 mb-2">Telefon</label>
+              <label for="phone" class="block text-gray-700 mb-2" data-pl="Telefon" data-de="Telefon">Telefon</label>
               <input type="tel" id="phone" name="phone" 
                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#d4af37] focus:border-transparent">
             </div>
             <div>
-              <label for="message" class="block text-gray-700 mb-2">Wiadomość</label>
+              <label for="service" class="block text-gray-700 mb-2" data-pl="Rodzaj usługi" data-de="Dienstleistungsart">Rodzaj usługi</label>
+              <select id="service" name="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#d4af37] focus:border-transparent">
+                <option value="" data-pl="Wybierz usługę" data-de="Dienstleistung wählen">Wybierz usługę</option>
+                <option value="sucha-zabudowa" data-pl="Sucha zabudowa" data-de="Trockenbau">Sucha zabudowa</option>
+                <option value="szpachlowanie-malowanie" data-pl="Szpachlowanie i malowanie" data-de="Spachteln und Malern">Szpachlowanie i malowanie</option>
+                <option value="kompleksowe-wykonczenia" data-pl="Kompleksowe wykończenia" data-de="Komplette Innenausbauten">Kompleksowe wykończenia</option>
+                <option value="ocieplenia-elewacje" data-pl="Ocieplenia i elewacje" data-de="Wärmedämmung und Fassaden">Ocieplenia i elewacje</option>
+                <option value="montaz-okien-drzwi" data-pl="Montaż okien i drzwi" data-de="Fenster- und Türeneinbau">Montaż okien i drzwi</option>
+                <option value="remonty-kompleksowe" data-pl="Remonty kompleksowe" data-de="Komplette Renovierungen">Remonty kompleksowe</option>
+              </select>
+            </div>
+            <div>
+              <label for="message" class="block text-gray-700 mb-2" data-pl="Wiadomość" data-de="Nachricht">Wiadomość</label>
               <textarea id="message" name="message" rows="4" required 
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#d4af37] focus:border-transparent"></textarea>
             </div>
-            <button type="submit" class="w-full bg-[#d4af37] text-white py-3 rounded-lg font-semibold hover:bg-[#b8941f] transition-colors">Wyślij wiadomość</button>
+            <button type="submit" class="w-full bg-[#d4af37] text-white py-3 rounded-lg font-semibold hover:bg-[#b8941f] transition-colors" 
+                    data-pl="Wyślij wiadomość" data-de="Nachricht senden">Wyślij wiadomość</button>
           </form>
           <div id="formMessage" class="mt-4 hidden"></div>
         </div>
@@ -815,347 +538,325 @@
     </div>
   </section>
 
-  <!-- 🔹 Footer -->
-  <footer class="bg-[#081426] text-gray-400 py-6 text-center text-sm">
+  <!-- 🔹 Regulamin i Polityka Prywatności -->
+  <section id="regulamin" class="py-12 md:py-16 bg-white border-t">
     <div class="container mx-auto px-6">
-      <p>© 2025 Usługi Budowlane Rafał Pistrakiewicz | Stworzone z dumą w Niemczech 🇵🇱🇩🇪</p>
-    </div>
-  </footer>
-
-  <!-- 🔥 MOJE DZIEŁO MASTER - CHATBOT -->
-  <div class="construction-assistant">
-    <div class="assistant-toggle" onclick="toggleMasterChatbot()">
-      <div class="tool-icon">🛠️</div>
-      <div class="pulse-ring"></div>
-      <div class="notification-bubble" id="notificationBubble" style="display: none;">!</div>
-    </div>
-    
-    <div class="assistant-window" id="masterChatWindow">
-      <!-- HEADER -->
-      <div class="assistant-header">
-        <div class="contractor-profile">
-          <div class="contractor-avatar">RP</div>
-          <div class="contractor-info">
-            <h3>Rafał Pistrakiewicz</h3>
-            <div class="status">
-              <div class="status-dot"></div>
-              Online - Pomoc budowlana
+      <h3 class="text-2xl md:text-3xl font-semibold text-center mb-8 md:mb-12 text-[#0a1a2f]" 
+          data-pl="Regulamin i Polityka Prywatności" data-de="AGB und Datenschutzerklärung">Regulamin i Polityka Prywatności</h3>
+      
+      <div class="max-w-4xl mx-auto space-y-8">
+        
+        <!-- Polityka Prywatności PL -->
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <button class="legal-toggle w-full text-left flex justify-between items-center" data-target="privacy-pl">
+            <h4 class="text-lg md:text-xl font-semibold text-[#0a1a2f]">Polityka Prywatności - RODO & DSGVO</h4>
+            <i class="fas fa-chevron-down transition-transform"></i>
+          </button>
+          <div id="privacy-pl" class="legal-section mt-4">
+            <div class="space-y-4 text-sm text-gray-600">
+              <p><strong>§1. Postanowienia ogólne</strong></p>
+              <p>Administratorem danych osobowych jest:<br>
+                 <strong>Usługi Budowlane Rafał Pistrakiewicz</strong><br>
+                 NIP: <strong>8842487745</strong><br>
+                 Forma Prawna: <strong>Indywidualna Działalność Gospodarcza</strong><br>
+                 Data rozpoczęcia działalności: <strong>05.10.2023</strong><br>
+                 Dane kontaktowe: pistrakiewicz@gmail.com, +49 694 526 240.</p>
+              
+              <p><strong>§2. Podstawa prawna przetwarzania danych</strong></p>
+              <p>Dane przetwarzane są na podstawie:
+                <br>- Art. 6 ust. 1 lit. b RODO - wykonanie umowy
+                <br>- Art. 6 ust. 1 lit. a RODO - zgoda
+                <br>- Art. 6 ust. 1 lit. f RODO - prawnie uzasadniony interes
+                <br>- § 15 TMG (niemiecka ustawa o mediach)
+              </p>
+              
+              <p><strong>§3. Cele przetwarzania danych</strong></p>
+              <p>Dane osobowe przetwarzane są w celu:
+                <br>- Realizacji usług budowlanych
+                <br>- Wystawienia faktur i dokumentacji
+                <br>- Komunikacji z klientem
+                <br>- Marketingu bezpośredniego (za zgodą)
+                <br>- Wypełnienia obowiązków prawnych
+              </p>
+              
+              <p><strong>§4. Prawa użytkownika</strong></p>
+              <p>Przysługuje Państwu prawo do:
+                <br>- Dostępu do danych
+                <br>- Sprostowania danych
+                <br>- Usunięcia danych ("prawo do bycia zapomnianym")
+                <br>- Ograniczenia przetwarzania
+                <br>- Przenoszenia danych
+                <br>- Wniesienia sprzeciwu
+                <br>- Wniesienia skargi do organu nadzorczego (UODO w Polsce lub Landesdatenschutzbeauftragter w Niemczech)
+              </p>
+              
+              <p><strong>§5. Okres przechowywania danych</strong></p>
+              <p>Dane przechowywane są przez okres:
+                <br>- 6 lat - dokumentacja księgowa (§ 147 AO)
+                <br>- 3 lata - roszczenia cywilne (§ 195 BGB)
+                <br>- Do czasu wycofania zgody - dane marketingowe
+              </p>
+              
+              <p><strong>§6. Pliki cookies</strong></p>
+              <p>Strona wykorzystuje pliki cookies w celu:
+                <br>- Prawidłowego działania strony
+                <br>- Analizy ruchu na stronie
+                <br>- Personalizacji treści
+                <br>Cookies przechowywane są przez 12 miesięcy.
+              </p>
             </div>
           </div>
         </div>
-        <div class="header-actions">
-          <button class="btn-call" onclick="callContractor()">
-            📞 +48 694 526 240
+
+        <!-- Polityka Prywatności DE -->
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <button class="legal-toggle w-full text-left flex justify-between items-center" data-target="privacy-de">
+            <h4 class="text-lg md:text-xl font-semibold text-[#0a1a2f]">Datenschutzerklärung - DSGVO & BDSG</h4>
+            <i class="fas fa-chevron-down transition-transform"></i>
           </button>
-          <button class="btn-close" onclick="toggleMasterChatbot()">×</button>
+          <div id="privacy-de" class="legal-section mt-4">
+            <div class="space-y-4 text-sm text-gray-600">
+              <p><strong>§1. Allgemeine Bestimmungen</strong></p>
+              <p>Verantwortlicher für die Datenverarbeitung ist:<br>
+                 <strong>Baudienstleistungen Rafał Pistrakiewicz</strong><br>
+                 Steuernummer: <strong>8842487745</strong><br>
+                 Rechtsform: <strong>Einzelunternehmen</strong><br>
+                 Gründungsdatum: <strong>05.10.2023</strong><br>
+                 Kontaktdaten: pistrakiewicz@gmail.com, +49 694 526 240.</p>
+              
+              <p><strong>§2. Rechtsgrundlage der Datenverarbeitung</strong></p>
+              <p>Daten werden verarbeitet auf Grundlage von:
+                <br>- Art. 6 Abs. 1 lit. b DSGVO - Vertragserfüllung
+                <br>- Art. 6 Abs. 1 lit. a DSGVO - Einwilligung
+                <br>- Art. 6 Abs. 1 lit. f DSGVO - berechtigtes Interesse
+                <br>- § 15 TMG (Telemediengesetz)
+              </p>
+              
+              <p><strong>§3. Zwecke der Datenverarbeitung</strong></p>
+              <p>Personenbezogene Daten werden verarbeitet für:
+                <br>- Durchführung von Bauleistungen
+                <br>- Erstellung von Rechnungen und Dokumentation
+                <br>- Kundenkommunikation
+                <br>- Direktmarketing (mit Einwilligung)
+                <br>- Erfüllung gesetzlicher Pflichten
+              </p>
+              
+              <p><strong>§4. Rechte der betroffenen Person</strong></p>
+              <p>Sie haben das Recht auf:
+                <br>- Auskunft über Ihre Daten
+                <br>- Berichtigung der Daten
+                <br>- Löschung der Daten ("Recht auf Vergessenwerden")
+                <br>- Einschränkung der Verarbeitung
+                <br>- Datenübertragbarkeit
+                <br>- Widerspruch gegen die Verarbeitung
+                <br>- Beschwerde bei einer Aufsichtsbehörde (Landesdatenschutzbeauftragter)
+              </p>
+              
+              <p><strong>§5. Speicherdauer</strong></p>
+              <p>Daten werden gespeichert für:
+                <br>- 6 Jahre - Buchhaltungsunterlagen (§ 147 AO)
+                <br>- 3 Jahre - zivilrechtliche Ansprüche (§ 195 BGB)
+                <br>- Bis zum Widerruf - Marketingdaten
+              </p>
+              
+              <p><strong>§6. Cookies</strong></p>
+              <p>Diese Website verwendet Cookies für:
+                <br>- Ordungsgemäße Funktionalität der Website
+                <br>- Analyse des Website-Verkehrs
+                <br>- Personalisierung von Inhalten
+                <br>Cookies werden für 12 Monate gespeichert.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <!-- QUICK SERVICES -->
-      <div class="quick-services">
-        <div class="services-grid">
-          <div class="service-card" onclick="selectService('sucha-zabudowa')">
-            <div class="service-icon">🏗️</div>
-            <span>Sucha zabudowa</span>
-          </div>
-          <div class="service-card" onclick="selectService('malowanie')">
-            <div class="service-icon">🎨</div>
-            <span>Malowanie</span>
-          </div>
-          <div class="service-card" onclick="selectService('wykończenia')">
-            <div class="service-icon">🏠</div>
-            <span>Wykończenia</span>
-          </div>
-          <div class="service-card" onclick="selectService('ocieplenia')">
-            <div class="service-icon">🔥</div>
-            <span>Ocieplenia</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- CHAT MESSAGES -->
-      <div class="chat-messages" id="chatMessages">
-        <div class="message bot">
-          <div class="avatar">RP</div>
-          <div class="content">
-            Cześć! 👋 Jestem Rafał - pomogę z Twoim projektem budowlanym. Wybierz usługę lub opisz co potrzebujesz zrobić.
-            <div class="message-time" id="currentTime"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- QUICK ACTIONS -->
-      <div class="quick-actions">
-        <button class="quick-action-btn" onclick="quickAction('wycena')">
-          💰 Wyceń projekt
-        </button>
-        <button class="quick-action-btn" onclick="quickAction('termin')">
-          📅 Umów termin
-        </button>
-        <button class="quick-action-btn" onclick="quickAction('zdjecia')">
-          📸 Wyślij zdjęcia
-        </button>
-      </div>
-
-      <!-- CHAT INPUT -->
-      <div class="chat-input-container">
-        <div class="chat-input-wrapper">
-          <textarea 
-            class="chat-input" 
-            id="userInput" 
-            placeholder="Opisz swój projekt budowlany..." 
-            rows="1"
-            oninput="autoResize(this)"
-          ></textarea>
-        </div>
-        <div class="input-actions">
-          <button class="action-btn" onclick="attachFile()" title="Załącz zdjęcia">
-            📎
+        <!-- Regulamin PL -->
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <button class="legal-toggle w-full text-left flex justify-between items-center" data-target="terms-pl">
+            <h4 class="text-lg md:text-xl font-semibold text-[#0a1a2f]">Regulamin Świadczenia Usług</h4>
+            <i class="fas fa-chevron-down transition-transform"></i>
           </button>
-          <button class="btn-send" id="sendButton" onclick="sendMessage()">
-            ➤
-          </button>
+          <div id="terms-pl" class="legal-section mt-4">
+            <div class="space-y-4 text-sm text-gray-600">
+              <p><strong>§1. Definicje</strong></p>
+              <p>Usługodawca - <strong>Usługi Budowlane Rafał Pistrakiewicz</strong><br>
+                 NIP: <strong>8842487745</strong><br>
+                 Forma Prawna: <strong>Indywidualna Działalność Gospodarcza</strong><br>
+                 Data rozpoczęcia: <strong>05.10.2023</strong><br>
+                 Usługobiorca - Klient korzystający z usług<br>
+                 Umowa - ustna lub pisemna umowa o wykonanie usług budowlanych</p>
+              
+              <p><strong>§2. Zasady świadczenia usług</strong></p>
+              <p>1. Usługi świadczone są na terenie Niemiec<br>
+                 2. Czas realizacji ustalany jest indywidualnie<br>
+                 3. Materiały zapewnia Usługobiorca lub Usługodawca (za dodatkową opłatą)<br>
+                 4. Prace wykonywane są zgodnie z niemieckimi normami budowlanymi (DIN)</p>
+              
+              <p><strong>§3. Płatności</strong></p>
+              <p>1. Płatność: przelew bankowy, gotówka (do €10,000)<br>
+                 2. Termin płatności: 14 dni od daty faktury<br>
+                 3. Zaliczka: 30% przy zawarciu umowy<br>
+                 4. Kary za opóźnienie: zgodnie z § 288 BGB</p>
+              
+              <p><strong>§4. Reklamacje</strong></p>
+              <p>1. Reklamacje należy składać na piśmie w terminie 14 dni<br>
+                 2. Czas rozpatrzenia reklamacji: 30 dni<br>
+                 3. W przypadku sporu właściwy jest sąd w miejscu siedziby Usługodawcy</p>
+              
+              <p><strong>§5. Odpowiedzialność</strong></p>
+              <p>1. Gwarancja na wykonane prace: 24 miesiące<br>
+                 2. Odpowiedzialność za wady: zgodnie z § 634a BGB<br>
+                 3. Ubezpieczenie: posiadane zgodnie z wymogami niemieckiego prawa</p>
+            </div>
+          </div>
         </div>
+
+        <!-- Impressum -->
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <button class="legal-toggle w-full text-left flex justify-between items-center" data-target="impressum">
+            <h4 class="text-lg md:text-xl font-semibold text-[#0a1a2f]">Impressum / Informacja zgodnie z § 5 TMG</h4>
+            <i class="fas fa-chevron-down transition-transform"></i>
+          </button>
+          <div id="impressum" class="legal-section mt-4">
+            <div class="space-y-4 text-sm text-gray-600">
+              <p><strong>Angaben gemäß § 5 TMG:</strong></p>
+              <p><strong>Usługi Budowlane Rafał Pistrakiewicz</strong><br>
+                 (Baudienstleistungen Rafał Pistrakiewicz)<br>
+                 [Adres siedziby w Niemczech]<br>
+                 Deutschland</p>
+              
+              <p><strong>Kontakt:</strong><br>
+                 Telefon: +49 694 526 240<br>
+                 Mobil: +49 1516 3675 548<br>
+                 E-Mail: pistrakiewicz@gmail.com</p>
+              
+              <p><strong>Umsatzsteuer-ID:</strong><br>
+                 Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz: <strong>8842487745</strong></p>
+              
+              <p><strong>Rechtsform:</strong><br>
+                 Einzelunternehmen (Indywidualna Działalność Gospodarcza)</p>
+              
+              <p><strong>Gründungsdatum:</strong><br>
+                 05.10.2023</p>
+                 
+              <p><strong>Berufsbezeichnung:</strong><br>
+                 Bauhandwerker</p>
+              
+              <p><strong>Aufsichtsbehörde:</strong><br>
+                 Handwerkskammer [odpowiednia izba rzemieślnicza]</p>
+              
+              <p><strong>Haftung für Inhalte:</strong><br>
+                 Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
+    </div>
+  </section>
+
+  <!-- 🔹 Footer -->
+  <footer class="bg-[#081426] text-gray-400 py-6 text-center text-sm">
+    <div class="container mx-auto px-6">
+      <p>© 2025 Usługi Budowlane Rafał Pistrakiewicz | <span data-pl="Stworzone z dumą w Niemczech" data-de="Mit Stolz in Deutschland erstellt">Stworzone z dumą w Niemczech</span> 🇵🇱🇩🇪</p>
+      <p class="mt-2">
+        <a href="#regulamin" class="hover:text-[#d4af37] transition-colors mx-2" data-pl="Polityka Prywatności" data-de="Datenschutz">Polityka Prywatności</a> |
+        <a href="#regulamin" class="hover:text-[#d4af37] transition-colors mx-2" data-pl="Regulamin" data-de="AGB">Regulamin</a> |
+        <a href="#regulamin" class="hover:text-[#d4af37] transition-colors mx-2" data-pl="Impressum" data-de="Impressum">Impressum</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- 🔹 Mobile Bottom Navigation -->
+  <nav class="mobile-bottom-nav">
+    <div class="nav-icons">
+      <a href="#o-nas" class="nav-icon">
+        <i class="fas fa-info-circle"></i>
+        <span data-pl="O nas" data-de="Über uns">O nas</span>
+      </a>
+      <a href="#uslugi" class="nav-icon">
+        <i class="fas fa-tools"></i>
+        <span data-pl="Usługi" data-de="Leistungen">Usługi</span>
+      </a>
+      <a href="#realizacje" class="nav-icon">
+        <i class="fas fa-images"></i>
+        <span data-pl="Realizacje" data-de="Projekte">Realizacje</span>
+      </a>
+      <a href="#opinie" class="nav-icon">
+        <i class="fas fa-star"></i>
+        <span data-pl="Opinie" data-de="Bewertungen">Opinie</span>
+      </a>
+      <a href="#kontakt" class="nav-icon">
+        <i class="fas fa-phone"></i>
+        <span data-pl="Kontakt" data-de="Kontakt">Kontakt</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 hidden z-50">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+      <p class="mb-4 md:mb-0 text-sm" data-pl="Ta strona używa plików cookies w celu poprawy jakości świadczonych usług. Dalsze korzystanie ze strony oznacza, że zgadzasz się na ich użycie." data-de="Diese Website verwendet Cookies, um die Qualität der angebotenen Dienstleistungen zu verbessern. Wenn Sie die Website weiter nutzen, stimmen Sie der Verwendung von Cookies zu.">
+        Ta strona używa plików cookies w celu poprawy jakości świadczonych usług. Dalsze korzystanie ze strony oznacza, że zgadzasz się na ich użycie.
+      </p>
+      <button onclick="acceptCookies()" class="bg-[#d4af37] text-white px-6 py-2 rounded-lg text-sm whitespace-nowrap">
+        <span data-pl="Akceptuję" data-de="Akzeptieren">Akceptuję</span>
+      </button>
     </div>
   </div>
 
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="fixed bottom-20 right-4 bg-[#d4af37] text-white p-3 rounded-full shadow-lg hidden z-40">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Gallery Modal -->
+  <div id="galleryModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
+    <button class="absolute top-4 right-4 text-white text-2xl z-10" onclick="closeModal()">
+      <i class="fas fa-times"></i>
+    </button>
+    <img id="modalImage" src="" class="max-w-full max-h-full object-contain">
+  </div>
+
+  <!-- Strukturalne dane JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Usługi Budowlane Rafał Pistrakiewicz",
+    "description": "Polskie usługi budowlane w Niemczech",
+    "telephone": "+49-694-526-240",
+    "email": "pistrakiewicz@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "DE"
+    },
+    "areaServed": "DE",
+    "serviceType": "Bau & Renovierung",
+    "taxID": "8842487745",
+    "foundingDate": "2023-10-05"
+  }
+  </script>
+
+  <!-- 🔧 Skrypty -->
   <script>
-    // 🔥 MASTER CHATBOT ENGINE
-    let isChatbotOpen = false;
-    let currentProject = null;
-    let conversationHistory = [];
-
-    // BAZA WIEDZY BUDOWLANEJ
-    const constructionKnowledge = {
-      'sucha-zabudowa': {
-        name: 'Sucha zabudowa',
-        description: 'Ścianki działowe z płyty g-k, sufity podwieszane, zabudowy meblowe. Materiały: Knauf, Rigips.',
-        price: '45-75€/m²',
-        time: '2-4 tygodnie',
-        details: 'Wykonujemy kompleksowe zabudowy z pełnym wykończeniem i gwarancją 24 miesiące.'
-      },
-      'malowanie': {
-        name: 'Malowanie i szpachlowanie',
-        description: 'Profesjonalne przygotowanie powierzchni, szpachlowanie maszynowe, malowanie farbami lateksowymi.',
-        price: 'Szpachlowanie: 15-25€/m², Malowanie: 8-15€/m²',
-        time: '1-3 tygodnie',
-        details: 'Gwarantujemy idealnie gładkie ściany. Używamy materiałów najwyższej jakości.'
-      },
-      'wykończenia': {
-        name: 'Kompleksowe wykończenia',
-        description: 'Tapety, płytki, podłogi winylowe, panele - kompletne wykończenie "pod klucz".',
-        price: 'Tapety: 20-35€/m², Płytki: 45-80€/m²',
-        time: '3-6 tygodni',
-        details: 'Zajmujemy się wszystkim od demontażu po sprzątanie końcowe.'
-      },
-      'ocieplenia': {
-        name: 'Ocieplenia i elewacje',
-        description: 'Kompleksowe ocieplenia metodą lekką mokrą (ETICS), tynki strukturalne, malowanie elewacji.',
-        price: '120-180€/m² (system kompletny)',
-        time: '4-8 tygodni',
-        details: 'Prace zgodne z niemieckimi normami budowlanymi. Gwarancja 10 lat na ocieplenie.'
-      }
-    };
-
-    // FUNKCJE CHATBOTA
-    function toggleMasterChatbot() {
-      const window = document.getElementById('masterChatWindow');
-      const bubble = document.getElementById('notificationBubble');
-      
-      isChatbotOpen = !isChatbotOpen;
-      
-      if (isChatbotOpen) {
-        window.style.display = 'flex';
-        bubble.style.display = 'none';
-        document.getElementById('userInput').focus();
-        updateCurrentTime();
-      } else {
-        window.style.display = 'none';
-      }
-    }
-
-    function updateCurrentTime() {
-      const now = new Date();
-      document.getElementById('currentTime').textContent = 
-        now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-    }
-
-    function selectService(serviceId) {
-      const service = constructionKnowledge[serviceId];
-      const message = `Interesuje mnie ${service.name}. ${service.description}`;
-      
-      addUserMessage(message);
-      simulateTyping(() => {
-        const response = `Świetny wybór! 🛠️\n\n**${service.name}**\n${service.details}\n\n**Cena:** ${service.price}\n**Czas realizacji:** ${service.time}\n\nChcesz umówić bezpłatną wycenę lub masz pytania?`;
-        addBotMessage(response);
-      });
-    }
-
-    function quickAction(action) {
-      const actions = {
-        'wycena': 'Chcę otrzymać bezpłatną wycenę projektu',
-        'termin': 'Chcę umówić termin wizyty na miejscu',
-        'zdjecia': 'Mam zdjęcia projektu do konsultacji'
-      };
-      
-      sendQuickMessage(actions[action]);
-    }
-
-    function callContractor() {
-      window.location.href = 'tel:+48694526240';
-    }
-
-    function attachFile() {
-      addUserMessage('Chcę przesłać zdjęcia projektu do wyceny');
-      simulateTyping(() => {
-        addBotMessage('Świetnie! Proszę wysłać zdjęcia na email: pistrakiewicz@gmail.com lub przez WhatsApp: +48 694 526 240. Przeanalizuję i przygotuję szczegółową wycenę. 📸');
-      });
-    }
-
-    function autoResize(textarea) {
-      textarea.style.height = 'auto';
-      textarea.style.height = Math.min(textarea.scrollHeight, 100) + 'px';
-      document.getElementById('sendButton').disabled = textarea.value.trim() === '';
-    }
-
-    function addMessage(text, isUser = false) {
-      const messagesContainer = document.getElementById('chatMessages');
-      const messageDiv = document.createElement('div');
-      messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
-      
-      if (!isUser) {
-        const avatar = document.createElement('div');
-        avatar.className = 'avatar';
-        avatar.textContent = 'RP';
-        messageDiv.appendChild(avatar);
-      }
-      
-      const content = document.createElement('div');
-      content.className = 'content';
-      content.innerHTML = text.replace(/\n/g, '<br>');
-      
-      const time = document.createElement('div');
-      time.className = 'message-time';
-      time.textContent = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-      content.appendChild(time);
-      
-      messageDiv.appendChild(content);
-      messagesContainer.appendChild(messageDiv);
-      messagesContainer.scrollTop = messagesContainer.scrollHeight;
-      
-      conversationHistory.push({ text, isUser, timestamp: new Date() });
-    }
-
-    function addUserMessage(text) {
-      addMessage(text, true);
-    }
-
-    function addBotMessage(text) {
-      addMessage(text, false);
-    }
-
-    function simulateTyping(callback) {
-      const messagesContainer = document.getElementById('chatMessages');
-      const typingDiv = document.createElement('div');
-      typingDiv.className = 'message bot';
-      
-      const avatar = document.createElement('div');
-      avatar.className = 'avatar';
-      avatar.textContent = 'RP';
-      typingDiv.appendChild(avatar);
-      
-      const typingIndicator = document.createElement('div');
-      typingIndicator.className = 'typing-indicator';
-      typingIndicator.innerHTML = `
-        <div class="typing-dot"></div>
-        <div class="typing-dot"></div>
-        <div class="typing-dot"></div>
-      `;
-      typingDiv.appendChild(typingIndicator);
-      
-      messagesContainer.appendChild(typingDiv);
-      messagesContainer.scrollTop = messagesContainer.scrollHeight;
-      
-      setTimeout(() => {
-        typingDiv.remove();
-        callback();
-      }, 1500 + Math.random() * 1000);
-    }
-
-    function sendMessage() {
-      const input = document.getElementById('userInput');
-      const message = input.value.trim();
-      
-      if (!message) return;
-      
-      addUserMessage(message);
-      input.value = '';
-      autoResize(input);
-      
-      simulateTyping(() => {
-        const response = generateResponse(message);
-        addBotMessage(response);
-      });
-    }
-
-    function sendQuickMessage(message) {
-      document.getElementById('userInput').value = message;
-      sendMessage();
-    }
-
-    function generateResponse(message) {
-      const lowerMessage = message.toLowerCase();
-      
-      // Rozpoznawanie intencji
-      if (lowerMessage.includes('cen') || lowerMessage.includes('koszt') || lowerMessage.includes('wycen')) {
-        return 'Przygotuję szczegółową wycenę! Proszę podać:\n• Powierzchnię w m²\n• Stan obecny (zdjęcia)\n• Preferowany termin\nLub zadzwoń: +48 694 526 240 📞';
-      }
-      
-      if (lowerMessage.includes('termin') || lowerMessage.includes('umów') || lowerMessage.includes('spotkanie')) {
-        return 'Chętnie się spotkam! Działamy w całych Niemczech. Proszę podać lokalizację i preferowany termin. Odpowiem z dostępnymi terminami! 🗓️';
-      }
-      
-      if (lowerMessage.includes('zdjęc') || lowerMessage.includes('foto') || lowerMessage.includes('photo')) {
-        return 'Świetnie! Proszę wysłać zdjęcia na WhatsApp: +48 694 526 240 lub email: pistrakiewicz@gmail.com. Przeanalizuję i dam znać! 📸';
-      }
-      
-      if (lowerMessage.includes('dzięk') || lowerMessage.includes('thx') || lowerMessage.includes('bye')) {
-        return 'Dziękuję za kontakt! 🤝 Pamiętaj - zawsze możesz zadzwonić: +48 694 526 240. Powodzenia z projektem!';
-      }
-      
-      // Domyślna odpowiedź
-      return 'Rozumiem! Jesteśmy w stanie pomóc z Twoim projektem. Chcesz poznać szczegóły którejś z usług, umówić wycenę czy może mam do Ciebie zadzwonić? 📞';
-    }
-
-    // Auto-start powiadomienia
-    setTimeout(() => {
-      if (!isChatbotOpen) {
-        document.getElementById('notificationBubble').style.display = 'flex';
-      }
-    }, 8000);
-
-    // Enter do wysyłania
-    document.getElementById('userInput').addEventListener('keypress', function(e) {
-      if (e.key === 'Enter' && !e.shiftKey) {
-        e.preventDefault();
-        sendMessage();
-      }
-    });
-
-    // Inicjalizacja
-    document.addEventListener('DOMContentLoaded', function() {
-      updateCurrentTime();
-      
-      // Loading spinner
-      setTimeout(() => {
-        document.getElementById('loading').style.display = 'none';
-      }, 1000);
-    });
-
-    // Pozostałe funkcje strony
+    // Funkcja zmiany języka
     function setLang(lang) {
       document.documentElement.lang = lang;
+      document.querySelectorAll('[data-pl], [data-de]').forEach(el => {
+        if (el.hasAttribute(`data-${lang}`)) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT') {
+            el.placeholder = el.getAttribute(`data-${lang}`);
+          } else if (el.tagName === 'OPTION') {
+            el.textContent = el.getAttribute(`data-${lang}`);
+          } else {
+            el.textContent = el.getAttribute(`data-${lang}`);
+          }
+        }
+      });
+      
+      // Zapisz preferencje użytkownika
+      localStorage.setItem('preferredLang', lang);
     }
 
     // Menu mobilne
@@ -1164,26 +865,221 @@
       menu.classList.toggle('hidden');
     });
 
-    // Formularz kontaktowy
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const formData = new FormData(this);
-      const name = formData.get('name');
-      const email = formData.get('email');
-      const phone = formData.get('phone');
-      const message = formData.get('message');
-      
-      const subject = `Wiadomość od ${name} - Pistrakiewicz Bau`;
-      const body = `Imię i nazwisko: ${name}%0AEmail: ${email}%0ATelefon: ${phone}%0AWiadomość: ${message}`;
-      
-      window.location.href = `mailto:pistrakiewicz@gmail.com?subject=${subject}&body=${body}`;
+    // Zamknij menu mobilne po kliknięciu w link
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.add('hidden');
+      });
     });
 
-    // Gallery modal
-    function openModal(imageSrc) {
-      // Prosta implementacja modala
-      window.open(imageSrc, '_blank');
+    // Prosty formularz kontaktowy z wysyłaniem maila
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(this);
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      const currentLang = document.documentElement.lang || 'pl';
+      
+      // Loading state
+      submitBtn.disabled = true;
+      if (currentLang === 'pl') {
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Wysyłanie...';
+      } else {
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Senden...';
+      }
+      
+      // Symulacja wysyłania (w praktyce tutaj będzie mailto:)
+      setTimeout(() => {
+        // Przygotowanie danych do wysłania mailem
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const phone = formData.get('phone');
+        const service = formData.get('service');
+        const message = formData.get('message');
+        
+        // Utworzenie linku mailto
+        const subject = `Wiadomość od ${name} - Pistrakiewicz Bau`;
+        const body = `Imię i nazwisko: ${name}%0AEmail: ${email}%0ATelefon: ${phone}%0AUsługa: ${service}%0AWiadomość: ${message}`;
+        
+        // Otwarcie klienta pocztowego
+        window.location.href = `mailto:pistrakiewicz@gmail.com?subject=${subject}&body=${body}`;
+        
+        showFormMessage('success', currentLang === 'pl' 
+          ? 'Wiadomość wysłana! Otwórz klienta pocztowego aby dokończyć wysyłanie.' 
+          : 'Nachricht gesendet! Öffnen Sie Ihren E-Mail-Client, um den Versand abzuschließen.');
+        
+        this.reset();
+        
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }, 1500);
+    });
+
+    function showFormMessage(type, message) {
+      const formMessage = document.getElementById('formMessage');
+      formMessage.textContent = message;
+      formMessage.className = 'mt-4 p-4 rounded-lg';
+      
+      if (type === 'success') {
+        formMessage.classList.add('bg-green-100', 'text-green-700');
+      } else {
+        formMessage.classList.add('bg-red-100', 'text-red-700');
+      }
+      
+      formMessage.classList.remove('hidden');
+      
+      setTimeout(() => {
+        formMessage.classList.add('hidden');
+      }, 5000);
     }
+
+    // Carousel dla opinii
+    let currentReviewSet = 0;
+    const reviewSets = document.querySelectorAll('.carousel-item');
+    const dots = document.querySelectorAll('.carousel-dot');
+
+    function showReviewSet(index) {
+      reviewSets.forEach(set => set.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      reviewSets[index].classList.add('active');
+      dots[index].classList.add('active');
+      currentReviewSet = index;
+    }
+
+    // Automatyczna zmiana opinii co 12 godzin
+    setInterval(() => {
+      const nextSet = (currentReviewSet + 1) % reviewSets.length;
+      showReviewSet(nextSet);
+    }, 43200000); // 12 godzin
+
+    // Ręczna zmiana przez kropki
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const index = parseInt(dot.getAttribute('data-index'));
+        showReviewSet(index);
+      });
+    });
+
+    // Toggle dla sekcji prawnych
+    document.querySelectorAll('.legal-toggle').forEach(toggle => {
+      toggle.addEventListener('click', function() {
+        const target = this.getAttribute('data-target');
+        const section = document.getElementById(target);
+        const icon = this.querySelector('i');
+        
+        section.classList.toggle('open');
+        icon.classList.toggle('fa-chevron-down');
+        icon.classList.toggle('fa-chevron-up');
+      });
+    });
+
+    // Płynne przewijanie do sekcji
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Back to Top Button
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.remove('hidden');
+      } else {
+        backToTopButton.classList.add('hidden');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Gallery Modal
+    function openModal(imageSrc) {
+      const modal = document.getElementById('galleryModal');
+      const modalImage = document.getElementById('modalImage');
+      modalImage.src = imageSrc;
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('galleryModal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal on outside click
+    document.getElementById('galleryModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
+
+    // Cookie Banner
+    function checkCookies() {
+      if (!localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookieBanner').classList.remove('hidden');
+      }
+    }
+
+    function acceptCookies() {
+      localStorage.setItem('cookiesAccepted', 'true');
+      document.getElementById('cookieBanner').classList.add('hidden');
+    }
+
+    // Scroll Animations
+    function checkScroll() {
+      const elements = document.querySelectorAll('.fade-in');
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.classList.add('visible');
+        }
+      });
+    }
+
+    // Loading Spinner
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        document.getElementById('loading').style.display = 'none';
+        checkCookies();
+        checkScroll();
+      }, 1000);
+    });
+
+    window.addEventListener('scroll', checkScroll);
+
+    // Przy ładowaniu strony
+    document.addEventListener('DOMContentLoaded', function() {
+      const savedLang = localStorage.getItem('preferredLang') || 'pl';
+      setLang(savedLang);
+      
+      // Add fade-in class to sections
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.add('fade-in');
+      });
+    });
   </script>
+
 </body>
 </html>
