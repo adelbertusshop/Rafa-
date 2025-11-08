@@ -120,15 +120,15 @@
     }
 
     .assistant-toggle {
-      width: 70px;
-      height: 70px;
+      width: 80px;
+      height: 80px;
       background: linear-gradient(135deg, #d4af37, #b8941f);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 8px 32px rgba(212, 175, 55, 0.4);
+      box-shadow: 0 8px 32px rgba(212, 175, 55, 0.6);
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
       border: 3px solid #0a1a2f;
@@ -136,11 +136,11 @@
 
     .assistant-toggle:hover {
       transform: scale(1.1) rotate(5deg);
-      box-shadow: 0 12px 40px rgba(212, 175, 55, 0.6);
+      box-shadow: 0 12px 40px rgba(212, 175, 55, 0.8);
     }
 
     .assistant-toggle .tool-icon {
-      font-size: 1.8rem;
+      font-size: 2.2rem;
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
     }
 
@@ -167,35 +167,36 @@
       background: #ff4444;
       color: white;
       border-radius: 50%;
-      width: 24px;
-      height: 24px;
-      font-size: 0.8rem;
+      width: 28px;
+      height: 28px;
+      font-size: 0.9rem;
+      font-weight: bold;
       display: flex;
       align-items: center;
       justify-content: center;
       animation: bounce 2s infinite;
-      border: 2px solid white;
+      border: 3px solid white;
     }
 
     @keyframes bounce {
       0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-8px); }
-      60% { transform: translateY(-4px); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
     }
 
     .assistant-window {
       position: absolute;
-      bottom: 90px;
+      bottom: 100px;
       right: 0;
-      width: 420px;
-      height: 680px;
+      width: 500px;
+      height: 750px;
       background: white;
       border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
       display: none;
       flex-direction: column;
       overflow: hidden;
-      border: 3px solid #d4af37;
+      border: 4px solid #d4af37;
       transform-origin: bottom right;
       animation: windowAppear 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
@@ -208,7 +209,7 @@
     .assistant-header {
       background: linear-gradient(135deg, #0a1a2f, #1e3a5f);
       color: white;
-      padding: 20px;
+      padding: 25px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -218,38 +219,40 @@
     .contractor-profile {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 15px;
     }
 
     .contractor-avatar {
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       background: #d4af37;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
-      font-size: 1.2rem;
-      border: 2px solid white;
+      font-size: 1.5rem;
+      border: 3px solid white;
     }
 
     .contractor-info h3 {
       margin: 0;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
+      font-weight: 700;
     }
 
     .contractor-info .status {
-      font-size: 0.8rem;
-      opacity: 0.8;
+      font-size: 0.9rem;
+      opacity: 0.9;
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 8px;
+      margin-top: 5px;
     }
 
     .status-dot {
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
       background: #4CAF50;
       border-radius: 50%;
       animation: glow 2s infinite;
@@ -262,36 +265,39 @@
 
     .header-actions {
       display: flex;
-      gap: 10px;
+      gap: 12px;
     }
 
     .btn-call {
       background: #d4af37;
       color: white;
       border: none;
-      padding: 8px 16px;
-      border-radius: 20px;
+      padding: 12px 20px;
+      border-radius: 25px;
       cursor: pointer;
       font-weight: 600;
+      font-size: 0.9rem;
       transition: all 0.3s ease;
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 8px;
+      white-space: nowrap;
     }
 
     .btn-call:hover {
       background: #b8941f;
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
     }
 
     .btn-close {
       background: none;
       border: none;
       color: white;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       cursor: pointer;
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -300,74 +306,75 @@
     }
 
     .btn-close:hover {
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.2);
     }
 
     /* QUICK SERVICES GRID */
     .quick-services {
-      padding: 20px;
+      padding: 25px;
       background: #f8f9fa;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 2px solid #e0e0e0;
     }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      gap: 15px;
     }
 
     .service-card {
       background: white;
       border: 2px solid #e0e0e0;
-      border-radius: 12px;
-      padding: 15px;
+      border-radius: 15px;
+      padding: 20px;
       cursor: pointer;
       transition: all 0.3s ease;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
     }
 
     .service-card:hover {
       border-color: #d4af37;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
     }
 
     .service-icon {
-      font-size: 1.5rem;
-      width: 40px;
-      height: 40px;
+      font-size: 2rem;
+      width: 50px;
+      height: 50px;
       display: flex;
       align-items: center;
       justify-content: center;
       background: #f0f0f0;
-      border-radius: 10px;
+      border-radius: 12px;
     }
 
     .service-card span {
-      font-size: 0.8rem;
-      font-weight: 600;
+      font-size: 0.9rem;
+      font-weight: 700;
       color: #0a1a2f;
     }
 
     /* CHAT MESSAGES */
     .chat-messages {
       flex: 1;
-      padding: 20px;
+      padding: 25px;
       overflow-y: auto;
       background: #f8f9fa;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
+      min-height: 300px;
     }
 
     .message {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
+      gap: 12px;
       animation: messageSlide 0.3s ease-out;
     }
 
@@ -377,8 +384,8 @@
     }
 
     .message.bot .avatar {
-      width: 36px;
-      height: 36px;
+      width: 45px;
+      height: 45px;
       background: #d4af37;
       color: white;
       border-radius: 50%;
@@ -386,7 +393,10 @@
       align-items: center;
       justify-content: center;
       font-weight: bold;
+      font-size: 1rem;
       flex-shrink: 0;
+      border: 2px solid white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .message.user {
@@ -402,31 +412,33 @@
     .message.bot .content {
       background: white;
       color: #333;
-      border: 1px solid #e0e0e0;
+      border: 2px solid #e0e0e0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     .message .content {
-      padding: 12px 16px;
-      border-radius: 18px;
-      max-width: 280px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      line-height: 1.4;
+      padding: 15px 20px;
+      border-radius: 20px;
+      max-width: 320px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      line-height: 1.5;
+      font-size: 0.95rem;
     }
 
     .message-time {
-      font-size: 0.7rem;
-      opacity: 0.6;
-      margin-top: 5px;
+      font-size: 0.75rem;
+      opacity: 0.7;
+      margin-top: 8px;
       text-align: right;
     }
 
     /* QUICK ACTIONS */
     .quick-actions {
-      padding: 15px 20px;
+      padding: 20px 25px;
       background: white;
-      border-top: 1px solid #e0e0e0;
+      border-top: 2px solid #e0e0e0;
       display: flex;
-      gap: 10px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
@@ -434,30 +446,31 @@
       background: linear-gradient(135deg, #d4af37, #b8941f);
       color: white;
       border: none;
-      padding: 10px 16px;
-      border-radius: 20px;
+      padding: 12px 20px;
+      border-radius: 25px;
       cursor: pointer;
-      font-size: 0.8rem;
-      font-weight: 600;
+      font-size: 0.85rem;
+      font-weight: 700;
       transition: all 0.3s ease;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       white-space: nowrap;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
     }
 
     .quick-action-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(212, 175, 55, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
     }
 
     /* CHAT INPUT */
     .chat-input-container {
-      padding: 20px;
+      padding: 25px;
       background: white;
-      border-top: 1px solid #e0e0e0;
+      border-top: 2px solid #e0e0e0;
       display: flex;
-      gap: 12px;
+      gap: 15px;
       align-items: flex-end;
     }
 
@@ -465,29 +478,33 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
 
     .chat-input {
       width: 100%;
-      padding: 12px 16px;
+      padding: 15px 20px;
       border: 2px solid #e0e0e0;
       border-radius: 25px;
       outline: none;
       font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
       resize: none;
-      max-height: 100px;
-      min-height: 20px;
+      max-height: 120px;
+      min-height: 25px;
       transition: border-color 0.3s ease;
+      background: #f8f9fa;
     }
 
     .chat-input:focus {
       border-color: #d4af37;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
     }
 
     .input-actions {
       display: flex;
-      gap: 8px;
+      gap: 10px;
     }
 
     .action-btn {
@@ -495,17 +512,19 @@
       border: none;
       color: #666;
       cursor: pointer;
-      padding: 8px;
+      padding: 10px;
       border-radius: 50%;
       transition: all 0.3s ease;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 1.2rem;
     }
 
     .action-btn:hover {
       background: #f0f0f0;
       color: #d4af37;
+      transform: scale(1.1);
     }
 
     .btn-send {
@@ -513,42 +532,47 @@
       color: white;
       border: none;
       border-radius: 50%;
-      width: 48px;
-      height: 48px;
+      width: 55px;
+      height: 55px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: all 0.3s ease;
       flex-shrink: 0;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
     }
 
     .btn-send:hover {
       background: #b8941f;
       transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
     }
 
     .btn-send:disabled {
       background: #cccccc;
       cursor: not-allowed;
       transform: none;
+      box-shadow: none;
     }
 
     /* TYPING INDICATOR */
     .typing-indicator {
       display: flex;
       align-items: center;
-      gap: 5px;
-      padding: 12px 16px;
+      gap: 6px;
+      padding: 15px 20px;
       background: white;
-      border-radius: 18px;
-      border: 1px solid #e0e0e0;
+      border-radius: 20px;
+      border: 2px solid #e0e0e0;
       width: fit-content;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     .typing-dot {
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
       background: #d4af37;
       border-radius: 50%;
       animation: typing 1.4s infinite ease-in-out;
@@ -570,14 +594,15 @@
       }
 
       .assistant-toggle {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
       }
 
       .assistant-window {
         width: calc(100vw - 30px);
-        height: 70vh;
+        height: 75vh;
         right: -8px;
+        bottom: 90px;
       }
 
       .services-grid {
@@ -586,6 +611,25 @@
 
       .quick-actions {
         justify-content: center;
+      }
+
+      .message .content {
+        max-width: 280px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .assistant-window {
+        height: 80vh;
+      }
+      
+      .chat-messages {
+        padding: 15px;
+      }
+      
+      .message .content {
+        max-width: 240px;
+        font-size: 0.9rem;
       }
     }
   </style>
@@ -1391,475 +1435,382 @@
   </div>
 
   <script>
-    // 🔥 MASTER CHATBOT ENGINE
+    // 🔥 POPRAWIONE WYSYŁANIE FORMULARZA - BEZPOŚREDNIO DO EMAIL
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const phone = formData.get('phone');
+        const service = formData.get('service');
+        const message = formData.get('message');
+        
+        // Bezpośrednie wysłanie do właściciela
+        const subject = `Nowa wiadomość ze strony - ${name}`;
+        const body = `
+Imię i nazwisko: ${name}
+Email: ${email}
+Telefon: ${phone}
+Usługa: ${service}
+
+Wiadomość:
+${message}
+
+---
+Wiadomość wysłana ze strony Rafał Pistrakiewicz Bau & Renovierung
+        `.trim();
+        
+        // Otwórz klienta pocztowego z wypełnionymi danymi
+        window.location.href = `mailto:pistrakiewicz@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Komunikat sukcesu
+        showFormMessage('success', 'Otwórz klienta pocztowego aby wysłać wiadomość bezpośrednio do Rafała!');
+        
+        // Opcjonalnie: reset formularza
+        setTimeout(() => {
+            this.reset();
+        }, 3000);
+    });
+
+    function showFormMessage(type, message) {
+        const formMessage = document.getElementById('formMessage');
+        formMessage.textContent = message;
+        formMessage.className = 'mt-4 p-4 rounded-lg text-center font-semibold';
+        
+        if (type === 'success') {
+            formMessage.classList.add('bg-green-100', 'text-green-800', 'border', 'border-green-300');
+        } else {
+            formMessage.classList.add('bg-red-100', 'text-red-800', 'border', 'border-red-300');
+        }
+        
+        formMessage.classList.remove('hidden');
+        
+        setTimeout(() => {
+            formMessage.classList.add('hidden');
+        }, 6000);
+    }
+
+    // 🔥 POPRAWIONE FUNKCJE CHATBOTA - WIĘKSZE I WIDOCZNE
     let isChatbotOpen = false;
     let currentProject = null;
     let conversationHistory = [];
 
-    // 🔥 ROZBUDOWANA BAZA WIEDZY BUDOWLANEJ - SZCZEGÓŁOWA
-    const constructionKnowledge = {
-      'sucha-zabudowa': {
-        name: 'Sucha zabudowa',
-        description: 'Profesjonalne ścianki działowe, sufity podwieszane i zabudowy meblowe',
-        price: '45-75€/m²',
-        time: '2-4 tygodnie',
-        warranty: '24 miesiące',
-        details: `🏗️ **SPECJALIZACJA W SUCHEJ ZABUDOWIE:**
-
-• **Ścianki działowe** - konstrukcje stalowe, płyty G-K 12,5mm, izolacja akustyczna
-• **Sufity podwieszane** - systemy Knauf, możliwość montażu oświetlenia LED
-• **Zabudowy meblowe** - garderoby, szafy wnękowe, zabudowy kuchenne
-• **Prace izolacyjne** - wełna mineralna 50mm, folie paroizolacyjne
-• **Montaż** - zgodnie z normami DIN, precyzyjne wykonanie
-
-**MATERIAŁY:** Profile CW/UW, płyty G-K, wkręty, taśmy, masy szpachlowe
-**CZAS REALIZACJI:** 2-4 tygodnie w zależności od skali projektu
-**GWARANCJA:** 24 miesiące na wykonanie
-
-Potrzebujesz wyceny konkretnego projektu?`,
-
-        materials: ['Profile stalowe CW/UW', 'Płyty gipsowo-kartonowe 12,5mm', 'Wełna mineralna akustyczna', 'Wkręty do blach', 'Taśmy uszczelniające'],
-        standards: ['DIN 18180', 'DIN 18181', 'Normy Knauf']
-      },
-
-      'malowanie': {
-        name: 'Malowanie i szpachlowanie',
-        description: 'Kompleksowe malowanie wnętrz z przygotowaniem powierzchni',
-        price: 'Szpachlowanie: 15-25€/m², Malowanie: 8-15€/m²',
-        time: '1-3 tygodnie',
-        warranty: '36 miesięcy na malowanie',
-        details: `🎨 **PROFESJONALNE MALOWANIE I SZPACHLOWANIE:**
-
-• **Przygotowanie powierzchni** - usuwanie starych powłok, gruntowanie
-• **Szpachlowanie maszynowe** - wyrównywanie ścian, ukrywanie instalacji
-• **Szlifowanie** - ręczne i maszynowe dla idealnie gładkich powierzchni
-• **Malowanie** - farby lateksowe, akrylowe, zmywalne
-• **Zabezpieczenia** - osłony mebli, podłóg, okien
-
-**TECHNOLOGIE:** Szpachlówki maszynowe Knauf, farby Caparol, Śnieżka
-**WARSTWY:** Grunt + 2 warstwy szpachli + 2 warstwy farby
-**CZAS:** 1-3 tygodnie w zależności od metrażu
-
-Chcesz poznać dokładny koszt dla Twojego mieszkania?`,
-
-        techniques: ['Szpachlowanie maszynowe', 'Szlifowanie orbitalne', 'Malowanie natryskowe', 'Pędzlowanie narożników'],
-        paint_types: ['Lateksowe (zmywalne)', 'Akrylowe', 'Elewacyjne', 'Specjalistyczne']
-      },
-
-      'wykończenia': {
-        name: 'Kompleksowe wykończenia',
-        description: 'Tapety, płytki, podłogi - wykończenie pod klucz',
-        price: 'Tapety: 20-35€/m², Płytki: 45-80€/m², Podłogi: 25-45€/m²',
-        time: '3-6 tygodni',
-        warranty: '24 miesiące',
-        details: `🏠 **KOMPLEKSOWE WYKOŃCZENIA WNĘTRZ:**
-
-• **Układanie płytek** - łazienki, kuchnie, przedpokoje (płytki ceramiczne, gres)
-• **Montaż paneli** - podłogi winylowe, panele laminowane, deski warstwowe
-• **Tapetowanie** - tapety papierowe, winylowe, szklane, fototapety
-• **Montaż listew** - przypodłogowych, przypodłogowych, maskujących
-• **Prace wykończeniowe** - fugowanie, montaż cokołów, osprzętu
-
-**MATERIAŁY:** Płytki Paradyz, Opoczno | Panele Quick-Step, BerryAlloc | Tapety Rasch, Marburg
-**PREPARACJA:** Wyrównanie podłoża, gruntowanie, przygotowanie fug
-**CZAS:** 3-6 tygodni dla średniego mieszkania
-
-Masz już wybrane materiały czy potrzebujesz doradztwa?`,
-
-        flooring: ['Panele winylowe', 'Panele laminowane', 'Deski warstwowe', 'Płytki gres'],
-        wall_finishes: ['Tapety winylowe', 'Tapety szklane', 'Fototapety', 'Płytki dekoracyjne']
-      },
-
-      'ocieplenia': {
-        name: 'Ocieplenia i elewacje',
-        description: 'Kompleksowe ocieplenia budynków i prace elewacyjne',
-        price: '120-180€/m² (system kompletny z materiałami)',
-        time: '4-8 tygodni',
-        warranty: '10 lat na ocieplenie',
-        details: `🔥 **SPECJALIZACJA W OCIEPLENIACH I ELEWACJACH:**
-
-• **System ETICS** - ocieplenie metodą lekką mokrą (styropian, wełna mineralna)
-• **Tynki strukturalne** - tynki mineralne, silikonowe, akrylowe
-• **Docieplenie poddasza** - wełna mineralna, folie paroizolacyjne
-• **Elewacje wentylowane** - systemy z okładzinami ceramicznymi
-• **Prace wysokościowe** - rusztowania, podnośniki, zabezpieczenia
-
-**SYSTEMY:** Knauf ETICS, Sto Therm, Weber
-**MATERIAŁY:** Styropian EPS 100, wełna fasadowa, siatki zbrojące
-**GRUBOŚCI:** 12-20cm w zależności od wymagań energetycznych
-
-Potrzebujesz audytu energetycznego budynku?`,
-
-        insulation_types: ['Styropian EPS 70-100', 'Wełna mineralna', 'Pianka PUR', 'Styrodur'],
-        facade_systems: ['ETICS (metoda lekka mokra)', 'Elewacje wentylowane', 'Tynki tradycyjne']
-      },
-
-      'okna-drzwi': {
-        name: 'Montaż okien i drzwi',
-        description: 'Profesjonalny montaż stolarki okiennej i drzwiowej',
-        price: 'Okno: 150-300€/szt, Drzwi: 200-500€/szt',
-        time: '1-2 tygodnie',
-        warranty: '60 miesięcy na montaż',
-        details: `🚪 **MONTAŻ OKIEN I DRZWI:**
-
-• **Demontaż starej stolarki** - bezpieczne usuwanie bez uszkodzeń muru
-• **Montaż okien** - PVC, drewniane, aluminiowe z uszczelnieniem
-• **Montaż drzwi** - wejściowe, wewnętrzne, antywłamaniowe
-• **Uszczelnianie** - pianki montażowe, taśmy rozprężne
-• **Wykończenie** - parapety, opaski, fugowanie
-
-**OKNA:** 3-szybowe, klasa A++, Uw = 0,8-1,1 W/m²K
-**DRZWI:** Drzwi antywłamaniowe RC2, RC3, izolacja akustyczna
-**MONTAŻ:** Zgodnie z normą DIN 18361
-
-Szukasz energooszczędnych rozwiązań?`,
-
-        window_types: ['PVC 3-komorowe', 'Drewniane klejone', 'Aluminiowe', 'Pasywne'],
-        door_types: ['Antywłamaniowe RC2/RC3', 'Wejściowe stalowe', 'Wewnętrzne', 'Przesuwne']
-      },
-
-      'remonty': {
-        name: 'Remonty kompleksowe',
-        description: 'Kompletne remonty mieszkań i domów pod klucz',
-        price: 'od 400€/m² (w zależności od standardu)',
-        time: '8-16 tygodni',
-        warranty: '48 miesięcy',
-        details: `🔧 **KOMPLEKSOWE REMONTY POD KLUCZ:**
-
-• **Projekt funkcjonalny** - aranżacja przestrzeni, rozmieszczenie instalacji
-• **Prace budowlane** - ściany, sufity, podłogi, instalacje
-• **Instalacje elektryczne** - gniazda, oświetlenie, systemy smart home
-• **Instalacje hydrauliczne** - łazienki, kuchnie, ogrzewanie
-• **Wykończenia** - wszystkie prace wykończeniowe
-• **Sprzątanie** - porządki końcowe, oddanie gotowego do zamieszkania
-
-**ETAPY:** Demontaż -> Konstrukcje -> Instalacje -> Wykończenia -> Sprzątanie
-**STANDARD:** Od ekonomicznego do premium z materiałami wysokiej klasy
-**ZARZĄDZANIE:** Koordynacja wszystkich ekip, kontrola jakości
-
-Planujesz kompleksowy remont? Opowiedz mi o swoim projekcie!`,
-
-        stages: ['Projekt i wycena', 'Prace przygotowawcze', 'Prace konstrukcyjne', 'Instalacje', 'Wykończenia', 'Odbiór'],
-        included_services: ['Koordynacja prac', 'Zakup materiałów', 'Wykonanie wszystkich robót', 'Sprzątanie końcowe']
-      }
-    };
-
-    // 🔥 INTELEGENTNE ODPOWIEDZI NA KONKRETNE PYTANIA
-    const expertResponses = {
-      // Pytania o materiały
-      'jakie materiały': 'Używamy materiałów od sprawdzonych producentów: Knauf, Caparol, Weber, Quick-Step. Wszystkie materiały posiadają certyfikaty i gwarancje producenta.',
-      'które materiały są najlepsze': 'Dobór materiałów zależy od konkretnego projektu. Dla suchej zabudowy polecam Knauf, do malowania farby Caparol, a do podłóg panele Quick-Step.',
-      'certyfikaty materiałów': 'Wszystkie używane materiały posiadają certyfikaty CE i spełniają europejskie normy jakości.',
-      
-      // Pytania o czas
-      'jak długo potrwa': 'Czas realizacji zależy od skali projektu. Sucha zabudowa: 2-4 tygodnie, malowanie: 1-3 tygodnie, kompleksowy remont: 8-16 tygodni.',
-      'czy mogę się wprowadzić': 'Po malowaniu można się wprowadzać po 2-3 dniach. Po kompleksowym remoncie - po sprzątaniu końcowym.',
-      'termin realizacji': 'Terminy ustalamy indywidualnie. Zwykle zaczynamy w ciągu 2-3 tygodni od podpisania umowy.',
-      
-      // Pytania o gwarancje
-      'gwarancja na prace': 'Sucha zabudowa: 24 miesiące, malowanie: 36 miesięcy, ocieplenia: 10 lat, montaż okien: 60 miesięcy.',
-      'co obejmuje gwarancja': 'Gwarancja obejmuje wady wykonacja i materiały. Wszystkie szczegóły zawarte są w umowie.',
-      'jak zgłosić reklamację': 'Reklamacje można zgłaszać telefonicznie +48 694 526 240 lub mailowo: pistrakiewicz@gmail.com.',
-      
-      // Pytania techniczne
-      'grubość ocieplenia': 'Standardowo stosujemy 12-20cm styropianu lub wełny. Dokładną grubość dobieramy do charakterystyki budynku.',
-      'rodzaj farby': 'Stosujemy farby lateksowe i akrylowe marki Caparol - zmywalne, odporne na ścieranie.',
-      'izolacja akustyczna': 'Do izolacji akustycznej używamy wełny mineralnej 50mm w ściankach działowych.',
-      
-      // Pytania o koszty
-      'czy cena obejmuje materiały': 'Tak, podane ceny są kompleksowe i obejmują materiały oraz robociznę.',
-      'formy płatności': 'Pracujemy z zaliczką 30% przy podpisaniu umowy, reszta po wykonaniu prac.',
-      'czy jest możliwość rat': 'Tak, oferujemy możliwość płatności w ratach dla większych projektów.',
-      
-      // Pytania ogólne
-      'gdzie działacie': 'Działamy na terenie całych Niemiec, ze szczególnym uwzględnieniem Berlina, Brandenburgii, Bawarii i Nadrenii.',
-      'czy mam zapewnić materiały': 'Nie, my zajmujemy się kompleksowo materiałami. Masz gwarancję na całość wykonania.',
-      'czy potrzebuję projektu': 'Dla prostych prac nie jest konieczny, dla kompleksowych remontów zalecamy projekt.'
-    };
-
-    // FUNKCJE CHATBOTA
     function toggleMasterChatbot() {
-      const window = document.getElementById('masterChatWindow');
-      const bubble = document.getElementById('notificationBubble');
-      
-      isChatbotOpen = !isChatbotOpen;
-      
-      if (isChatbotOpen) {
-        window.style.display = 'flex';
-        bubble.style.display = 'none';
-        document.getElementById('userInput').focus();
-        updateCurrentTime();
-      } else {
-        window.style.display = 'none';
-      }
+        const window = document.getElementById('masterChatWindow');
+        const bubble = document.getElementById('notificationBubble');
+        
+        isChatbotOpen = !isChatbotOpen;
+        
+        if (isChatbotOpen) {
+            window.style.display = 'flex';
+            bubble.style.display = 'none';
+            document.getElementById('userInput').focus();
+            updateCurrentTime();
+            
+            // Auto-scroll do dołu
+            setTimeout(() => {
+                const messagesContainer = document.getElementById('chatMessages');
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 100);
+        } else {
+            window.style.display = 'none';
+        }
     }
 
     function updateCurrentTime() {
-      const now = new Date();
-      document.getElementById('currentTime').textContent = 
-        now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        const now = new Date();
+        document.getElementById('currentTime').textContent = 
+            now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
     }
 
     function selectService(serviceId) {
-      const service = constructionKnowledge[serviceId];
-      const message = `Interesuje mnie ${service.name}. ${service.description}`;
-      
-      addUserMessage(message);
-      simulateTyping(() => {
-        const response = generateExpertResponse(service.name);
-        addBotMessage(response);
-      });
+        const service = constructionKnowledge[serviceId];
+        const message = `Interesuje mnie ${service.name}. ${service.description}`;
+        
+        addUserMessage(message);
+        simulateTyping(() => {
+            const response = generateExpertResponse(service.name);
+            addBotMessage(response);
+        });
     }
 
     function quickAction(action) {
-      const actions = {
-        'wycena': 'Chcę otrzymać bezpłatną wycenę projektu',
-        'termin': 'Chcę umówić termin wizyty na miejscu',
-        'zdjecia': 'Mam zdjęcia projektu do konsultacji'
-      };
-      
-      sendQuickMessage(actions[action]);
+        const actions = {
+            'wycena': {
+                message: 'Chcę otrzymać bezpłatną wycenę projektu budowlanego',
+                followup: 'Świetnie! Opowiedz mi więcej o swoim projekcie - jaka jest powierzchnia, jakie prace są potrzebne? Możesz też wysłać zdjęcia na email: pistrakiewicz@gmail.com'
+            },
+            'termin': {
+                message: 'Chcę umówić termin wizyty na miejscu',
+                followup: 'Doskonale! Jesteśmy dostępni w ciągu 2-3 tygodni. Proszę podać preferowany termin i lokalizację. Możesz też zadzwonić bezpośrednio: +48 694 526 240'
+            },
+            'zdjecia': {
+                message: 'Mam zdjęcia projektu do konsultacji - gdzie mogę je wysłać?',
+                followup: 'Zdjęcia możesz wysłać na email: pistrakiewicz@gmail.com lub przez WhatsApp: +48 694 526 240. Przeanalizuję je i przygotuję wstępną wycenę! 📸'
+            }
+        };
+        
+        const actionData = actions[action];
+        addUserMessage(actionData.message);
+        
+        simulateTyping(() => {
+            addBotMessage(actionData.followup);
+        });
     }
 
     function callContractor() {
-      window.location.href = 'tel:+48694526240';
+        window.location.href = 'tel:+48694526240';
     }
 
     function attachFile() {
-      addUserMessage('Chcę przesłać zdjęcia projektu do wyceny');
-      simulateTyping(() => {
-        addBotMessage('Świetnie! Proszę wysłać zdjęcia na email: pistrakiewicz@gmail.com lub przez WhatsApp: +48 694 526 240. Przeanalizuję i przygotuję szczegółową wycenę. 📸');
-      });
+        addUserMessage('Chcę przesłać zdjęcia projektu do wyceny');
+        simulateTyping(() => {
+            addBotMessage('Świetnie! Proszę wysłać zdjęcia na email: pistrakiewicz@gmail.com lub przez WhatsApp: +48 694 526 240. Przeanalizuję i przygotuję szczegółową wycenę. 📸');
+        });
     }
 
     function autoResize(textarea) {
-      textarea.style.height = 'auto';
-      textarea.style.height = Math.min(textarea.scrollHeight, 100) + 'px';
-      document.getElementById('sendButton').disabled = textarea.value.trim() === '';
+        textarea.style.height = 'auto';
+        textarea.style.height = Math.min(textarea.scrollHeight, 100) + 'px';
+        document.getElementById('sendButton').disabled = textarea.value.trim() === '';
     }
 
     function addMessage(text, isUser = false) {
-      const messagesContainer = document.getElementById('chatMessages');
-      const messageDiv = document.createElement('div');
-      messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
-      
-      if (!isUser) {
-        const avatar = document.createElement('div');
-        avatar.className = 'avatar';
-        avatar.textContent = 'RP';
-        messageDiv.appendChild(avatar);
-      }
-      
-      const content = document.createElement('div');
-      content.className = 'content';
-      content.innerHTML = text.replace(/\n/g, '<br>');
-      
-      const time = document.createElement('div');
-      time.className = 'message-time';
-      time.textContent = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-      content.appendChild(time);
-      
-      messageDiv.appendChild(content);
-      messagesContainer.appendChild(messageDiv);
-      messagesContainer.scrollTop = messagesContainer.scrollHeight;
-      
-      conversationHistory.push({ text, isUser, timestamp: new Date() });
+        const messagesContainer = document.getElementById('chatMessages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+        
+        if (!isUser) {
+            const avatar = document.createElement('div');
+            avatar.className = 'avatar';
+            avatar.textContent = 'RP';
+            messageDiv.appendChild(avatar);
+        }
+        
+        const content = document.createElement('div');
+        content.className = 'content';
+        content.innerHTML = text.replace(/\n/g, '<br>');
+        
+        const time = document.createElement('div');
+        time.className = 'message-time';
+        time.textContent = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        content.appendChild(time);
+        
+        messageDiv.appendChild(content);
+        messagesContainer.appendChild(messageDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        
+        conversationHistory.push({ text, isUser, timestamp: new Date() });
     }
 
     function addUserMessage(text) {
-      addMessage(text, true);
+        addMessage(text, true);
     }
 
     function addBotMessage(text) {
-      addMessage(text, false);
+        addMessage(text, false);
     }
 
     function simulateTyping(callback) {
-      const messagesContainer = document.getElementById('chatMessages');
-      const typingDiv = document.createElement('div');
-      typingDiv.className = 'message bot';
-      
-      const avatar = document.createElement('div');
-      avatar.className = 'avatar';
-      avatar.textContent = 'RP';
-      typingDiv.appendChild(avatar);
-      
-      const typingIndicator = document.createElement('div');
-      typingIndicator.className = 'typing-indicator';
-      typingIndicator.innerHTML = `
-        <div class="typing-dot"></div>
-        <div class="typing-dot"></div>
-        <div class="typing-dot"></div>
-      `;
-      typingDiv.appendChild(typingIndicator);
-      
-      messagesContainer.appendChild(typingDiv);
-      messagesContainer.scrollTop = messagesContainer.scrollHeight;
-      
-      setTimeout(() => {
-        typingDiv.remove();
-        callback();
-      }, 1500 + Math.random() * 1000);
+        const messagesContainer = document.getElementById('chatMessages');
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'message bot';
+        
+        const avatar = document.createElement('div');
+        avatar.className = 'avatar';
+        avatar.textContent = 'RP';
+        typingDiv.appendChild(avatar);
+        
+        const typingIndicator = document.createElement('div');
+        typingIndicator.className = 'typing-indicator';
+        typingIndicator.innerHTML = `
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+        `;
+        typingDiv.appendChild(typingIndicator);
+        
+        messagesContainer.appendChild(typingDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        
+        setTimeout(() => {
+            typingDiv.remove();
+            callback();
+        }, 1500 + Math.random() * 1000);
     }
+
+    // 🔥 ROZBUDOWANA BAZA WIEDZY BUDOWLANEJ
+    const constructionKnowledge = {
+        'sucha-zabudowa': {
+            name: 'Sucha zabudowa',
+            description: 'Profesjonalne ścianki działowe, sufity podwieszane i zabudowy meblowe',
+            price: '45-75€/m²',
+            time: '2-4 tygodnie',
+            warranty: '24 miesiące',
+            details: `🏗️ **SPECJALIZACJA W SUCHEJ ZABUDOWIE:**
+
+    • **Ścianki działowe** - konstrukcje stalowe, płyty G-K 12,5mm, izolacja akustyczna
+    • **Sufity podwieszane** - systemy Knauf, możliwość montażu oświetlenia LED
+    • **Zabudowy meblowe** - garderoby, szafy wnękowe, zabudowy kuchenne
+    • **Prace izolacyjne** - wełna mineralna 50mm, folie paroizolacyjne
+    • **Montaż** - zgodnie z normami DIN, precyzyjne wykonanie
+
+    **MATERIAŁY:** Profile CW/UW, płyty G-K, wkręty, taśmy, masy szpachlowe
+    **CZAS REALIZACJI:** 2-4 tygodnie w zależności od skali projektu
+    **GWARANCJA:** 24 miesiące na wykonanie
+
+    Potrzebujesz wyceny konkretnego projektu?`
+        },
+        'malowanie': {
+            name: 'Malowanie i szpachlowanie',
+            description: 'Kompleksowe malowanie wnętrz z przygotowaniem powierzchni',
+            price: 'Szpachlowanie: 15-25€/m², Malowanie: 8-15€/m²',
+            time: '1-3 tygodnie',
+            warranty: '36 miesięcy na malowanie',
+            details: `🎨 **PROFESJONALNE MALOWANIE I SZPACHLOWANIE:**
+
+    • **Przygotowanie powierzchni** - usuwanie starych powłok, gruntowanie
+    • **Szpachlowanie maszynowe** - wyrównywanie ścian, ukrywanie instalacji
+    • **Szlifowanie** - ręczne i maszynowe dla idealnie gładkich powierzchni
+    • **Malowanie** - farby lateksowe, akrylowe, zmywalne
+    • **Zabezpieczenia** - osłony mebli, podłóg, okien
+
+    **TECHNOLOGIE:** Szpachlówki maszynowe Knauf, farby Caparol, Śnieżka
+    **WARSTWY:** Grunt + 2 warstwy szpachli + 2 warstwy farby
+    **CZAS:** 1-3 tygodnie w zależności od metrażu
+
+    Chcesz poznać dokładny koszt dla Twojego mieszkania?`
+        },
+        'wykończenia': {
+            name: 'Kompleksowe wykończenia',
+            description: 'Tapety, płytki, podłogi - wykończenie pod klucz',
+            price: 'Tapety: 20-35€/m², Płytki: 45-80€/m², Podłogi: 25-45€/m²',
+            time: '3-6 tygodni',
+            warranty: '24 miesiące',
+            details: `🏠 **KOMPLEKSOWE WYKOŃCZENIA WNĘTRZ:**
+
+    • **Układanie płytek** - łazienki, kuchnie, przedpokoje (płytki ceramiczne, gres)
+    • **Montaż paneli** - podłogi winylowe, panele laminowane, deski warstwowe
+    • **Tapetowanie** - tapety papierowe, winylowe, szklane, fototapety
+    • **Montaż listew** - przypodłogowych, przypodłogowych, maskujących
+    • **Prace wykończeniowe** - fugowanie, montaż cokołów, osprzętu
+
+    **MATERIAŁY:** Płytki Paradyz, Opoczno | Panele Quick-Step, BerryAlloc | Tapety Rasch, Marburg
+    **PREPARACJA:** Wyrównanie podłoża, gruntowanie, przygotowanie fug
+    **CZAS:** 3-6 tygodni dla średniego mieszkania
+
+    Masz już wybrane materiały czy potrzebujesz doradztwa?`
+        },
+        'ocieplenia': {
+            name: 'Ocieplenia i elewacje',
+            description: 'Kompleksowe ocieplenia budynków i prace elewacyjne',
+            price: '120-180€/m² (system kompletny z materiałami)',
+            time: '4-8 tygodni',
+            warranty: '10 lat na ocieplenie',
+            details: `🔥 **SPECJALIZACJA W OCIEPLENIACH I ELEWACJACH:**
+
+    • **System ETICS** - ocieplenie metodą lekką mokrą (styropian, wełna mineralna)
+    • **Tynki strukturalne** - tynki mineralne, silikonowe, akrylowe
+    • **Docieplenie poddasza** - wełna mineralna, folie paroizolacyjne
+    • **Elewacje wentylowane** - systemy z okładzinami ceramicznymi
+    • **Prace wysokościowe** - rusztowania, podnośniki, zabezpieczenia
+
+    **SYSTEMY:** Knauf ETICS, Sto Therm, Weber
+    **MATERIAŁY:** Styropian EPS 100, wełna fasadowa, siatki zbrojące
+    **GRUBOŚCI:** 12-20cm w zależności od wymagań energetycznych
+
+    Potrzebujesz audytu energetycznego budynku?`
+        }
+    };
 
     // 🔥 ULEPSZONA FUNKCJA GENERUJĄCA ODPOWIEDZI
     function generateExpertResponse(message) {
-      const lowerMessage = message.toLowerCase();
-      
-      // Sprawdź pytania o konkretne usługi
-      for (const [serviceKey, serviceData] of Object.entries(constructionKnowledge)) {
-        if (lowerMessage.includes(serviceKey.replace('-', ' ')) || 
-            lowerMessage.includes(serviceData.name.toLowerCase())) {
-          
-          let response = `🔧 **${serviceData.name.toUpperCase()}**\n\n`;
-          response += `${serviceData.details}\n\n`;
-          
-          // Dodaj specyficzne informacje w zależności od usługi
-          if (serviceData.materials) {
-            response += `📦 **Używane materiały:** ${serviceData.materials.join(', ')}\n\n`;
-          }
-          
-          response += `💰 **Przybliżona cena:** ${serviceData.price}\n`;
-          response += `⏰ **Czas realizacji:** ${serviceData.time}\n`;
-          response += `🛡️ **Gwarancja:** ${serviceData.warranty}\n\n`;
-          
-          response += `Czy chcesz poznać więcej szczegółów lub umówić bezpłatną wycenę? 📞`;
-          
-          return response;
+        const lowerMessage = message.toLowerCase();
+        
+        // Sprawdź pytania o konkretne usługi
+        for (const [serviceKey, serviceData] of Object.entries(constructionKnowledge)) {
+            if (lowerMessage.includes(serviceKey.replace('-', ' ')) || 
+                lowerMessage.includes(serviceData.name.toLowerCase())) {
+                
+                let response = `🔧 **${serviceData.name.toUpperCase()}**\n\n`;
+                response += `${serviceData.details}\n\n`;
+                
+                response += `💰 **Przybliżona cena:** ${serviceData.price}\n`;
+                response += `⏰ **Czas realizacji:** ${serviceData.time}\n`;
+                response += `🛡️ **Gwarancja:** ${serviceData.warranty}\n\n`;
+                
+                response += `Czy chcesz poznać więcej szczegółów lub umówić bezpłatną wycenę? 📞`;
+                
+                return response;
+            }
         }
-      }
-      
-      // Sprawdź pytania eksperckie
-      for (const [question, answer] of Object.entries(expertResponses)) {
-        if (lowerMessage.includes(question)) {
-          return `${answer}\n\nMasz więcej pytań dotyczących tego tematu?`;
-        }
-      }
-      
-      // Pytania o wycenę
-      if (lowerMessage.includes('wycen') || lowerMessage.includes('cen') || lowerMessage.includes('koszt')) {
-        return `💰 **PROCES WYCENY:**\n\n1. Opiszesz mi swój projekt\n2. Prześlę przybliżoną wycenę\n3. Umówimy bezpłatną wizję lokalną\n4. Przedstawię szczegółową ofertę\n\nOpowiedz mi o swoim projekcie! 🏠`;
-      }
-      
-      // Pytania o terminy
-      if (lowerMessage.includes('termin') || lowerMessage.includes('kiedy') || lowerMessage.includes('umów')) {
-        return `📅 **DOSTĘPNOŚĆ TERMINÓW:**\n\nAktualnie zaczynamy projekty za 2-3 tygodnie.\nDokładny termin ustalimy podczas wizyty lokalnej.\n\nChcesz sprawdzić moją dostępność?`;
-      }
-      
-      // Pytania o zdjęcia
-      if (lowerMessage.includes('zdjęc') || lowerMessage.includes('foto') || lowerMessage.includes('photo')) {
-        return `📸 **KONSULTACJA ZE ZDJĘCIAMI:**\n\nWyślij zdjęcia na:\n• WhatsApp: +48 694 526 240\n• Email: pistrakiewicz@gmail.com\n\nPrzeanalizuję i przygotuję wstępną wycenę!`;
-      }
-      
-      // Domyślna inteligentna odpowiedź
-      return `Rozumiem! Jako specjalista z 10-letnim doświadczeniem w budownictwie w Niemczech, pomogę Ci z każdym aspektem Twojego projektu. 🛠️\n\nCzy chcesz poznać:\n• Szczegóły konkretnej usługi?\n• Przybliżone koszty?\n• Dostępne terminy?\n• A może masz konkretne pytanie techniczne?\n\nJestem tutaj, żeby pomóc! 💪`;
+        
+        // Domyślna inteligentna odpowiedź
+        return `Rozumiem! Jako specjalista z 10-letnim doświadczeniem w budownictwie w Niemczech, pomogę Ci z każdym aspektem Twojego projektu. 🛠️\n\nCzy chcesz poznać:\n• Szczegóły konkretnej usługi?\n• Przybliżone koszty?\n• Dostępne terminy?\n• A może masz konkretne pytanie techniczne?\n\nJestem tutaj, żeby pomóc! 💪`;
     }
 
     function sendMessage() {
-      const input = document.getElementById('userInput');
-      const message = input.value.trim();
-      
-      if (!message) return;
-      
-      addUserMessage(message);
-      input.value = '';
-      autoResize(input);
-      
-      simulateTyping(() => {
-        const response = generateExpertResponse(message);
-        addBotMessage(response);
-      });
-    }
-
-    function sendQuickMessage(message) {
-      document.getElementById('userInput').value = message;
-      sendMessage();
+        const input = document.getElementById('userInput');
+        const message = input.value.trim();
+        
+        if (!message) return;
+        
+        addUserMessage(message);
+        input.value = '';
+        autoResize(input);
+        document.getElementById('sendButton').disabled = true;
+        
+        simulateTyping(() => {
+            const response = generateExpertResponse(message);
+            addBotMessage(response);
+            
+            // Jeśli użytkownik pyta o wycenę lub chce wysłać zdjęcia
+            if (message.toLowerCase().includes('wycen') || message.toLowerCase().includes('zdjęc') || message.toLowerCase().includes('foto')) {
+                setTimeout(() => {
+                    addBotMessage('📧 Możesz też wysłać szczegóły bezpośrednio na email: <strong>pistrakiewicz@gmail.com</strong> - odpowiadam bardzo szybko!');
+                }, 1000);
+            }
+        });
     }
 
     // Auto-start powiadomienia
     setTimeout(() => {
-      if (!isChatbotOpen) {
-        document.getElementById('notificationBubble').style.display = 'flex';
-      }
+        if (!isChatbotOpen) {
+            document.getElementById('notificationBubble').style.display = 'flex';
+        }
     }, 8000);
 
     // Enter do wysyłania
     document.getElementById('userInput').addEventListener('keypress', function(e) {
-      if (e.key === 'Enter' && !e.shiftKey) {
-        e.preventDefault();
-        sendMessage();
-      }
-    });
-
-    // Inicjalizacja
-    document.addEventListener('DOMContentLoaded', function() {
-      updateCurrentTime();
-      
-      // Loading spinner
-      setTimeout(() => {
-        document.getElementById('loading').style.display = 'none';
-      }, 1000);
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+        }
     });
 
     // Pozostałe funkcje strony
     function setLang(lang) {
-      document.documentElement.lang = lang;
-      document.querySelectorAll('[data-pl], [data-de]').forEach(el => {
-        if (el.hasAttribute(`data-${lang}`)) {
-          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT') {
-            el.placeholder = el.getAttribute(`data-${lang}`);
-          } else if (el.tagName === 'OPTION') {
-            el.textContent = el.getAttribute(`data-${lang}`);
-          } else {
-            el.textContent = el.getAttribute(`data-${lang}`);
-          }
-        }
-      });
-      localStorage.setItem('preferredLang', lang);
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-pl], [data-de]').forEach(el => {
+            if (el.hasAttribute(`data-${lang}`)) {
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT') {
+                    el.placeholder = el.getAttribute(`data-${lang}`);
+                } else if (el.tagName === 'OPTION') {
+                    el.textContent = el.getAttribute(`data-${lang}`);
+                } else {
+                    el.textContent = el.getAttribute(`data-${lang}`);
+                }
+            }
+        });
+        localStorage.setItem('preferredLang', lang);
     }
 
     // Menu mobilne
     document.getElementById('mobileMenuButton').addEventListener('click', function() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('hidden');
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
     });
-
-    // Formularz kontaktowy
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const formData = new FormData(this);
-      const name = formData.get('name');
-      const email = formData.get('email');
-      const phone = formData.get('phone');
-            const service = formData.get('service');
-      const message = formData.get('message');
-      
-      const subject = `Wiadomość od ${name} - Pistrakiewicz Bau`;
-      const body = `Imię i nazwisko: ${name}%0AEmail: ${email}%0ATelefon: ${phone}%0AUsługa: ${service}%0AWiadomość: ${message}`;
-      
-      window.location.href = `mailto:pistrakiewicz@gmail.com?subject=${subject}&body=${body}`;
-      
-      showFormMessage('success', 'Wiadomość wysłana! Otwórz klienta pocztowego aby dokończyć wysyłanie.');
-      this.reset();
-    });
-
-    function showFormMessage(type, message) {
-      const formMessage = document.getElementById('formMessage');
-      formMessage.textContent = message;
-      formMessage.className = 'mt-4 p-4 rounded-lg';
-      
-      if (type === 'success') {
-        formMessage.classList.add('bg-green-100', 'text-green-700');
-      } else {
-        formMessage.classList.add('bg-red-100', 'text-red-700');
-      }
-      
-      formMessage.classList.remove('hidden');
-      
-      setTimeout(() => {
-        formMessage.classList.add('hidden');
-      }, 5000);
-    }
 
     // Carousel dla opinii
     let currentReviewSet = 0;
@@ -1867,271 +1818,140 @@ Planujesz kompleksowy remont? Opowiedz mi o swoim projekcie!`,
     const dots = document.querySelectorAll('.carousel-dot');
 
     function showReviewSet(index) {
-      reviewSets.forEach(set => set.classList.remove('active'));
-      dots.forEach(dot => dot.classList.remove('active'));
-      
-      reviewSets[index].classList.add('active');
-      dots[index].classList.add('active');
-      currentReviewSet = index;
+        reviewSets.forEach(set => set.classList.remove('active'));
+        dots.forEach(dot => dot.classList.remove('active'));
+        
+        reviewSets[index].classList.add('active');
+        dots[index].classList.add('active');
+        currentReviewSet = index;
     }
 
     // Automatyczna zmiana opinii co 12 godzin
     setInterval(() => {
-      const nextSet = (currentReviewSet + 1) % reviewSets.length;
-      showReviewSet(nextSet);
+        const nextSet = (currentReviewSet + 1) % reviewSets.length;
+        showReviewSet(nextSet);
     }, 43200000);
 
     // Ręczna zmiana przez kropki
     dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        const index = parseInt(dot.getAttribute('data-index'));
-        showReviewSet(index);
-      });
+        dot.addEventListener('click', () => {
+            const index = parseInt(dot.getAttribute('data-index'));
+            showReviewSet(index);
+        });
     });
 
     // Toggle dla sekcji prawnych
     document.querySelectorAll('.legal-toggle').forEach(toggle => {
-      toggle.addEventListener('click', function() {
-        const target = this.getAttribute('data-target');
-        const section = document.getElementById(target);
-        const icon = this.querySelector('i');
-        
-        section.classList.toggle('open');
-        icon.classList.toggle('fa-chevron-down');
-        icon.classList.toggle('fa-chevron-up');
-      });
+        toggle.addEventListener('click', function() {
+            const target = this.getAttribute('data-target');
+            const section = document.getElementById(target);
+            const icon = this.querySelector('i');
+            
+            section.classList.toggle('open');
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        });
     });
 
     // Płynne przewijanie do sekcji
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 
     // Back to Top Button
     const backToTopButton = document.getElementById('backToTop');
     
     window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.remove('hidden');
-      } else {
-        backToTopButton.classList.add('hidden');
-      }
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.remove('hidden');
+        } else {
+            backToTopButton.classList.add('hidden');
+        }
     });
     
     backToTopButton.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 
     // Gallery Modal
     function openModal(imageSrc) {
-      const modal = document.getElementById('galleryModal');
-      const modalImage = document.getElementById('modalImage');
-      modalImage.src = imageSrc;
-      modal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
+        const modal = document.getElementById('galleryModal');
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = imageSrc;
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
     }
 
     function closeModal() {
-      const modal = document.getElementById('galleryModal');
-      modal.classList.add('hidden');
-      document.body.style.overflow = 'auto';
+        const modal = document.getElementById('galleryModal');
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
     }
 
     // Close modal on outside click
     document.getElementById('galleryModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeModal();
-      }
+        if (e.target === this) {
+            closeModal();
+        }
     });
 
     // Cookie Banner
     function checkCookies() {
-      if (!localStorage.getItem('cookiesAccepted')) {
-        document.getElementById('cookieBanner').classList.remove('hidden');
-      }
+        if (!localStorage.getItem('cookiesAccepted')) {
+            document.getElementById('cookieBanner').classList.remove('hidden');
+        }
     }
 
     function acceptCookies() {
-      localStorage.setItem('cookiesAccepted', 'true');
-      document.getElementById('cookieBanner').classList.add('hidden');
+        localStorage.setItem('cookiesAccepted', 'true');
+        document.getElementById('cookieBanner').classList.add('hidden');
     }
 
     // Scroll Animations
     function checkScroll() {
-      const elements = document.querySelectorAll('.fade-in');
-      elements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < window.innerHeight - elementVisible) {
-          element.classList.add('visible');
-        }
-      });
-    }
-
-    // 🔥 DODATKOWE FUNKCJE CHATBOTA
-    function initializeChatbot() {
-      // Auto-powiadomienie po 8 sekundach
-      setTimeout(() => {
-        if (!isChatbotOpen) {
-          document.getElementById('notificationBubble').style.display = 'flex';
-        }
-      }, 8000);
-
-      // Obsługa Enter w inpucie chatu
-      document.getElementById('userInput').addEventListener('keypress', function(e) {
-        if (e.key === 'Enter' && !e.shiftKey) {
-          e.preventDefault();
-          sendMessage();
-        }
-      });
-
-      // Auto-focus przy otwarciu chatu
-      document.querySelector('.assistant-toggle').addEventListener('click', function() {
-        setTimeout(() => {
-          if (isChatbotOpen) {
-            document.getElementById('userInput').focus();
-          }
-        }, 300);
-      });
-    }
-
-    // 🔥 ROZSZERZONA FUNKCJA OBSŁUGI JEZYKÓW DLA CHATBOTA
-    function updateChatbotLanguage(lang) {
-      const chatbotElements = {
-        'userInput': {
-          'pl': 'Opisz swój projekt budowlany...',
-          'de': 'Beschreiben Sie Ihr Bauprojekt...'
-        },
-        'quickActions': {
-          'pl': ['💰 Wyceń projekt', '📅 Umów termin', '📸 Wyślij zdjęcia'],
-          'de': ['💰 Projekt bewerten', '📅 Termin vereinbaren', '📸 Fotos senden']
-        },
-        'serviceCards': {
-          'pl': ['Sucha zabudowa', 'Malowanie', 'Wykończenia', 'Ocieplenia'],
-          'de': ['Trockenbau', 'Malen', 'Innenausbau', 'Dämmung']
-        }
-      };
-
-      // Aktualizacja placeholder inputa
-      document.getElementById('userInput').placeholder = chatbotElements.userInput[lang];
-
-      // Aktualizacja przycisków szybkich akcji
-      const quickActionBtns = document.querySelectorAll('.quick-action-btn');
-      quickActionBtns.forEach((btn, index) => {
-        btn.textContent = chatbotElements.quickActions[lang][index];
-      });
-
-      // Aktualizacja kart usług
-      const serviceCards = document.querySelectorAll('.service-card span');
-      serviceCards.forEach((card, index) => {
-        card.textContent = chatbotElements.serviceCards[lang][index];
-      });
-
-      // Aktualizacja wiadomości powitalnej
-      if (lang === 'de') {
-        const welcomeMessage = document.querySelector('.message.bot .content');
-        if (welcomeMessage) {
-          welcomeMessage.innerHTML = `Hallo! 👋 Ich bin Rafał - ich helfe bei Ihrem Bauprojekt. Wählen Sie einen Service oder beschreiben Sie, was Sie tun möchten.<div class="message-time" id="currentTime"></div>`;
-        }
-      }
-    }
-
-    // 🔥 INTEGRACJA CHATBOTA Z FORMULARZEM KONTAKTOWYM
-    function syncChatbotWithForm() {
-      // Gdy użytkownik wyśle wiadomość w chatbotie, zapisz dane do formularza
-      document.getElementById('userInput').addEventListener('blur', function() {
-        const message = this.value;
-        if (message.length > 10) {
-          localStorage.setItem('chatbotMessage', message);
-        }
-      });
-
-      // Przy otwarciu formularza, sprawdź czy są zapisane dane z chatu
-      document.getElementById('contactForm').addEventListener('focus', function() {
-        const savedMessage = localStorage.getItem('chatbotMessage');
-        if (savedMessage) {
-          document.getElementById('message').value = savedMessage;
-          localStorage.removeItem('chatbotMessage');
-        }
-      });
-    }
-
-    // Inicjalizacja po załadowaniu strony
-    window.addEventListener('load', function() {
-      setTimeout(() => {
-        document.getElementById('loading').style.display = 'none';
-        checkCookies();
-        checkScroll();
-        
-        // Inicjalizacja chatbotu
-        initializeChatbot();
-        syncChatbotWithForm();
-        
-        // Przywróć preferowany język
-        const savedLang = localStorage.getItem('preferredLang') || 'pl';
-        setLang(savedLang);
-        updateChatbotLanguage(savedLang);
-        
-        // Add fade-in class to sections
-        document.querySelectorAll('section').forEach(section => {
-          section.classList.add('fade-in');
+        const elements = document.querySelectorAll('.fade-in');
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('visible');
+            }
         });
-      }, 1000);
+    }
+
+    // Loading Spinner
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            document.getElementById('loading').style.display = 'none';
+            checkCookies();
+            checkScroll();
+            
+            // Przywróć preferowany język
+            const savedLang = localStorage.getItem('preferredLang') || 'pl';
+            setLang(savedLang);
+        }, 1000);
     });
 
     window.addEventListener('scroll', checkScroll);
 
-    // 🔥 ULEPSZONA FUNKCJA ZMIANY JĘZYKA Z UWZGLĘDNIENIEM CHATBOTA
-    const originalSetLang = setLang;
-    setLang = function(lang) {
-      originalSetLang(lang);
-      updateChatbotLanguage(lang);
-    };
-
-    // 🔥 FUNKCJA EMERGENCY CALL
-    function emergencyCall() {
-      if (confirm('Czy chcesz zadzwonić bezpośrednio do Rafała?')) {
-        window.location.href = 'tel:+48694526240';
-      }
-    }
-
-    // 🔥 AUTO-SCROLL DO FORMUŁARZA PO WYBORZE USŁUGI W CHATBOCIE
-    function scrollToContactForm() {
-      document.getElementById('kontakt').scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-
-    // Dodaj tę funkcję do wywołania po wybraniu usługi w chatbotie
-    function selectServiceWithScroll(serviceId) {
-      selectService(serviceId);
-      setTimeout(scrollToContactForm, 2000);
-    }
-
-    console.log('🔥 CHATBOT MASTER - SYSTEM AKTYWNY');
-    console.log('💡 Dostępne komendy: selectService(), quickAction(), emergencyCall()');
-    console.log('🛠️  Baza wiedzy: ' + Object.keys(constructionKnowledge).length + ' specjalizacji');
-
   </script>
 
 </body>
-</html>
-                                                            
+</html>                                                            
